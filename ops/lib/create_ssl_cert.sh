@@ -1,3 +1,5 @@
+set -e
+
 if [ ! -e "ops/bin/compose" ]; then
   echo 'Error: must be invoked from the app repository.' >&2
   exit 1
