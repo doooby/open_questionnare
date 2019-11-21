@@ -16,18 +16,17 @@ services:
     volumes:
       - bundle:/usr/local/bundle/
       - assets:/app/public/assets
-#      - /opt/oq/log:/app/log
+      - /opt/oq/log:/app/log
 
   nginx:
     build:
       context: ..
-      dockerfile: nginx.Dockerfile
-    ports:
-      - 80:80
+      dockerfile: ./ops/nginx.Dockerfile
     depends_on:
       - app
+    ports:
+      - 80:80
     volumes:
-      - ./ops/config/nginx.d:/etc/nginx/conf.d
       - assets:/var/www/assets
 
 volumes:
