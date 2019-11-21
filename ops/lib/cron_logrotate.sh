@@ -1,6 +1,6 @@
 #!/bin/sh
 
-/usr/sbin/logrotate /app/ops/config/logrotate.conf
+/usr/sbin/logrotate /etc/logrotate.conf
 exit_value=$?
 if [ $exit_value != 0 ]
 then

@@ -10,6 +10,9 @@ services:
     build:
       context: ..
       dockerfile: ./ops/app.Dockerfile
+    environment:
+      - RAILS_ENV=production
+      - RAILS_SERVE_STATIC_FILES=true
     command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b '0.0.0.0'"
     depends_on:
       - pg
@@ -22,14 +25,15 @@ services:
 
   nginx:
     build:
-      context: ..
-      dockerfile: ./ops/nginx.Dockerfile
+      context: .
+      dockerfile: ./nginx.Dockerfile
     depends_on:
       - app
     ports:
       - 80:80
     volumes:
-      - assets:/var/www/assets
+      - assets:/var/www/assets:ro
+      - /opt/oq/log:/var/log/nginx
 
 volumes:
   pg_data:
