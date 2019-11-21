@@ -9,7 +9,7 @@ services:
   app:
     build:
       context: ..
-      dockerfile: ./ops/Dockerfile
+      dockerfile: ./ops/app.Dockerfile
     command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b '0.0.0.0'"
     depends_on:
       - pg
@@ -19,13 +19,15 @@ services:
 #      - /opt/oq/log:/app/log
 
   nginx:
-    image: nginx:stable
+    build:
+      context: ..
+      dockerfile: nginx.Dockerfile
     ports:
       - 80:80
     depends_on:
       - app
     volumes:
-      - .ops/config/nginx.d:/etc/nginx/conf.d
+      - ./ops/config/nginx.d:/etc/nginx/conf.d
       - assets:/var/www/assets
 
 volumes:
