@@ -25,7 +25,7 @@ services:
     depends_on:
       - app
     volumes:
-      - .ops/config/nginx.d:/etc/ngingx/conf.d
+      - .ops/config/nginx.d:/etc/nginx/conf.d
       - assets:/var/www/assets
 
 volumes:

@@ -1,3 +1,4 @@
 #!/bin/sh
 
+# just exec something on running app container
 docker-compose -f ops/docker-compose.yml exec app "$@"
