@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+compose="docker-compose -f ops/docker-compose.yml"
+$compose build --pull
+$compose run --rm web bash ops/lib/build_app.sh
+$compose up -d
+$compose exec web bash ops/lib/clean_app.sh
