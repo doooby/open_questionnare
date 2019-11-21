@@ -82,5 +82,4 @@ production:
   <<: *default
   host: pg
   database: oq_production
-  username: oq
-  password: <%= ENV['OQ_DATABASE_PASSWORD'] %>
+  username: postgres
