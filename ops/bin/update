@@ -2,7 +2,22 @@
 set -e
 
 compose="docker-compose -f ops/docker-compose.yml"
+
+echo
+echo "--- Building docker images"
 $compose build --pull
-$compose run --rm web bash ops/lib/build_app.sh
+
+echo
+echo "--- Building App's dependencies"
+$compose run --rm app bash ops/lib/build_app.sh
+
+echo
+echo "--- Bringing up all services"
 $compose up -d
-$compose exec web bash ops/lib/clean_app.sh
+
+echo
+echo "--- Cleaning up"
+$compose exec app bash ops/lib/clean_app.sh
+
+echo
+echo "--- Done"
