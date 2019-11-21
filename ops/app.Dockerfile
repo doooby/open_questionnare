@@ -3,7 +3,6 @@ FROM ruby:2.6.5
 RUN mkdir /app
 WORKDIR /app
 ENV RAILS_ENV=production
-ENV SECRET_KEY_BASE=bb3493214e1d63323d6475bf46f4c39629dc72e71316f960b5599ca15364a2e569f29d10e3170d4b6bac40a725f129ad6b1270ed38b00a80009e376fcae6fdd5
 
 COPY . .
 RUN bash ops/lib/provision_container.sh
