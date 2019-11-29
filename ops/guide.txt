@@ -17,6 +17,7 @@
 
 ### install app
     `ops_dir=ops`
+    `stack_path=/opt/$name`
 * push from local to "$stack_path/app.git"
 * checkout workdir
     `sudo git clone --single-branch --branch master $stack_path/app.git $stack_path/app`
