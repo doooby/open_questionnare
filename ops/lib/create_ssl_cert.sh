@@ -8,8 +8,12 @@ if [ -n $domains ]; then
   echo "Usage:  <script.sh> <domain1> <domain2> ..."
 fi
 
-if [ ! -e "$(pwd)/app/config/application.rb" ]; then
-  echo "Error:  must be invoked from the stack repository." >&2
+rsa_key_size=4096
+data_path="$(pwd)/../var/certbot"
+compose="ops/bin/compose"
+
+if [ ! -e "$(pwd)/$compose" ]; then
+  echo "Error:  must be invoked from the app working directory." >&2
   exit 1
 fi
 
@@ -17,10 +21,6 @@ if [ $(whoami) != "root" ]; then
   echo "Error:  this has to be run as root (sudo?)"
   exit 1
 fi
-
-rsa_key_size=4096
-data_path="$(pwd)/../var/certbot"
-compose="ops/bin/compose"
 
 if [ -d "$data_path" ]; then
   read -p "Existing data found for $domains. Continue and replace existing certificate? (y/N) " decision
