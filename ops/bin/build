@@ -2,11 +2,11 @@
 set -e
 
 echo "########### Building app image"
-#source ops/lib/build_app.sh ops
+source ops/lib/build_app.sh ops
 echo
 
 echo "########### Building assets"
-#docker run --rm -v $(pwd)/../var/www:/var/www -v $(pwd)/../var/assets:/app/public/assets app:build bash -c "cp -R public/* /var/www && bin/rails assets:precompile assets:clean"
+docker run --rm -v $(pwd)/../var/www:/var/www -v $(pwd)/../var/assets:/app/public/assets app:build bash -c "cp -R public/* /var/www && bin/rails assets:precompile assets:clean"
 echo
 
 echo "########### Building services images"
