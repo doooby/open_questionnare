@@ -1,11 +1,15 @@
 set -e
 
-if [ ! -e "ops/bin/compose" ]; then
-  echo 'Error: must be invoked from the app repository.' >&2
+if [ ! -e "$(pwd)/config/application.rb" ]; then
+  echo "Error:  must be invoked from the app repository." >&2
   exit 1
 fi
 
-domains=(alpha.ema-monitoring.org)
+domains="$@"
+if [ -n $domains ]; then
+  echo "Error:  pass domains as arguments"
+fi
+
 rsa_key_size=4096
 data_path="/opt/oq/certbot"
 email="" # Adding a valid address is strongly recommended

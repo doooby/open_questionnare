@@ -1,23 +1,25 @@
 #!/bin/sh
 set -e
 
-compose="docker-compose -f ops/docker-compose.yml"
+ops_dir=ops
+compose="docker-compose -f $ops_dir/docker-compose.yml"
 
+echo "--- Building app image"
+docker build $ops_dir/app.base.Dockerfile -t app:base
+docker run --rm -v ../var/bundle:/usr/local/bundle/ app:base bundle install --without development test --clean
+docker run --rm -v ../var/node_modules:/app/node_modules app:base yarn install
+docker build $ops_dir/app.Dockerfile -t app:build
 echo
-echo "--- Building docker images"
+
+echo "--- Building assets"
+docker run --rm -v ../var/www:/var/www -v ../var/assets:/app/public/assets app:build bash -c "cp -R public/* /var/www && bundle exec rails assets:precompile assets:clean"
+echo
+
+echo "--- Building services images"
 $compose build --pull
-
 echo
-echo "--- Building App's dependencies"
-$compose run --rm app bash ops/lib/build_app.sh
 
-echo
-echo "--- Bringing up all services"
+echo "--- Migrate and deploy"
+$compose run --rm app bundle exec rails db:migrate
 $compose up -d
-
 echo
-echo "--- Cleaning up"
-$compose exec app bash ops/lib/clean_app.sh
-
-echo
-echo "--- Done"

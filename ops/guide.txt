@@ -1,0 +1,40 @@
+### connection
+* jako root
+* vytvorit si tam uzivatele
+* pridat se do sudoers
+* vytvorit si pem cert
+* stahnout si pem
+* vyzouset nove pripojeni
+* zahodit rsa pro puvodni pristup
+
+### system provision
+    `name=oquest`
+* create group & stack path & git repo & hooks
+    `sudo source prepare_host.sh $name`
+
+### add user to the stack group
+    `sudo usermod -a -G $name $(whoami)`
+
+### install app
+    `ops_dir=ops`
+* push from local to "$stack_path/app.git"
+* checkout workdir
+    `sudo git clone --single-branch --branch master $stack_path/app.git $stack_path/app`
+* init the env
+    `sudo su -c "cd $stack_path/app && source $ops_dir/lib/install_app.sh $ops_dir"`
+* link the build script
+    `sudo ln -s $stack_path/app/$ops_dir/bin/build $stack_path/build_app`
+* create db + import, this needs postgres running
+    `sudo $stack_path/app/$ops_dir/bin/compose up -d pg`
+* compose up
+    `sudo $stack_path/app/$ops_dir/bin/compose up -d`
+* test app + db
+* create nginx cert
+    `domains=(the.domain.org)`
+    `sudo su -c "cd $stack_path && source app/$ops_dir/lib/create_ssl_cert.sh $domains"`
+* if not everything up, compose re-up
+    `sudo $stack_path/app/$ops_dir/bin/compose up -d --force-recreate`
+
+### building / deploying app
+* test push
+* prosper

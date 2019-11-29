@@ -1,10 +1,4 @@
-FROM ruby:2.6.5
+FROM app:base
 
-RUN mkdir /app
-WORKDIR /app
-
-COPY . .
-
-RUN cp ops/lib/cron_logrotate.sh /etc/cron.daily/app && \
-        chmod +x /etc/cron.daily/app && \
-        cp ops/config/logrotate_app.conf /etc/logrotate.conf
+COPY ./var/bundle /usr/local/bundle
+COPY ./var/node_modules ./node_modules
