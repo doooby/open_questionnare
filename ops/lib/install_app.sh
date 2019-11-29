@@ -6,7 +6,6 @@ if [ $(whoami) != "root" ]; then
 fi
 
 # must be called from app root
-ops_dir=$1
-$ops_dir/bin/compose build --pull
-$ops_dir/bin/compose run --rm app bundle install
-#$ops_dir/bin/compose run --rm app yarn install
+ops/bin/compose build --pull
+ops/bin/compose run --rm app bundle install
+#ops/bin/compose run --rm app yarn install

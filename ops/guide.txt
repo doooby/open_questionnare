@@ -16,26 +16,25 @@
     `sudo usermod -a -G $name $(whoami)`
 
 ### install app
-    `ops_dir=ops`
     `stack_path=/opt/$name`
 * push from local to "$stack_path/app.git"
 * checkout workdir
     `sudo git clone --single-branch --branch master $stack_path/app.git $stack_path/app`
 * init the env
-    `sudo su -c "cd $stack_path/app && bash $ops_dir/lib/build_app.sh $ops_dir"`
+    `sudo su -c "cd $stack_path/app && bash ops/lib/build_app.sh"`
 * link the build script
-    `sudo ln -s $stack_path/app/$ops_dir/bin/build $stack_path/build_app`
+    `sudo ln -s $stack_path/app/ops/bin/build $stack_path/build_app`
 * create db + import, this needs postgres running
-    `sudo su -c "cd $stack_path/app && $ops_dir/bin/compose up -d pg"`
-    `sudo su -c "cd $stack_path/app && $ops_dir/bin/compose run --rm app bin/rails db:create"`
+    `sudo su -c "cd $stack_path/app && ops/bin/compose up -d pg"`
+    `sudo su -c "cd $stack_path/app && ops/bin/compose run --rm app bin/rails db:create"`
 * compose up
-    `sudo $stack_path/app/$ops_dir/bin/compose up -d`
+    `sudo $stack_path/app/ops/bin/compose up -d`
 * test app + db
 * create nginx cert
     `domains=(the.domain.org)`
-    `sudo su -c "cd $stack_path && bash app/$ops_dir/lib/create_ssl_cert.sh $domains"`
+    `sudo su -c "cd $stack_path/app && bash ops/lib/create_ssl_cert.sh $domains"`
 * if not everything up, compose re-up
-    `sudo $stack_path/app/$ops_dir/bin/compose up -d --force-recreate`
+    `sudo $stack_path/app/ops/bin/compose up -d --force-recreate`
 
 ### building / deploying app
 * test push

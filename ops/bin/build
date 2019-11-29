@@ -1,11 +1,10 @@
 #!/bin/bash
 set -e
 
-ops_dir=ops
-compose="docker-compose -f $ops_dir/docker-compose.yml"
+compose="docker-compose -f ops/docker-compose.yml"
 
 echo "########### Building app image"
-source $ops_dir/lib/build_app.sh $ops_dir
+source ops/lib/build_app.sh ops
 echo
 
 echo "########### Building assets"
