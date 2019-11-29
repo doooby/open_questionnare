@@ -31,25 +31,6 @@ find $repo_path -type f | xargs chmod 440
 echo
 
 echo "--- installing git hooks"
-# write hook to allow only master
-git_hook=$repo_path/hooks/pre-receive
-cat > $git_hook <<"EOF"
-#!/bin/bash
-while read oldrev newrev refname
-do
-
-    branch=$(git rev-parse --symbolic --abbrev-ref $refname)
-    if [ "master" != "$branch" ]; then
-        echo "only master branch is accepted"
-        echo "use `git push <remote> <local-branch>:master`"
-        exit 1
-    fi
-
-done
-EOF
-chown root:"$name" $git_hook
-chmod 550 $git_hook
-
 # write build hook
 git_hook=$repo_path/hooks/post-receive
 cat > $git_hook <<"EOF"
