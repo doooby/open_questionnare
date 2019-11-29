@@ -4,19 +4,19 @@ set -e
 ops_dir=ops
 compose="docker-compose -f $ops_dir/docker-compose.yml"
 
-echo "--- Building app image"
+echo "########### Building app image"
 source $ops_dir/lib/build_app.sh $ops_dir
 echo
 
-echo "--- Building assets"
+echo "########### Building assets"
 docker run --rm -v $(pwd)/../var/www:/var/www -v $(pwd)/../var/assets:/app/public/assets app:build bash -c "cp -R public/* /var/www && bin/rails assets:precompile assets:clean"
 echo
 
-echo "--- Building services images"
+echo "########### Building services images"
 $compose build --pull
 echo
 
-echo "--- Migrate and deploy"
+echo "########### Migrate and deploy"
 $compose run --rm app bin/rails db:migrate
 $compose up -d
 echo

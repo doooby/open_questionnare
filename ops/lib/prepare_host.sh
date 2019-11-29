@@ -50,6 +50,7 @@ do
     cd ../app
     sudo git fetch origin
     sudo git reset --hard origin/master
+    echo
 
     echo "POST-RECEIVE  building"
     sudo ../build_app
