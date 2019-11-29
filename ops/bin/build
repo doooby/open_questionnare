@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-compose="docker-compose -f ops/docker-compose.yml"
-
 echo "########### Building app image"
 source ops/lib/build_app.sh ops
 echo
@@ -12,10 +10,10 @@ docker run --rm -v $(pwd)/../var/www:/var/www -v $(pwd)/../var/assets:/app/publi
 echo
 
 echo "########### Building services images"
-$compose build --pull
+ops/bin/compose build --pull
 echo
 
 echo "########### Migrate and deploy"
-$compose run --rm app bin/rails db:migrate
-$compose up -d
+ops/bin/compose run --rm app bin/rails db:migrate
+ops/bin/compose up -d
 echo

@@ -19,8 +19,8 @@ if [ $(whoami) != "root" ]; then
 fi
 
 rsa_key_size=4096
-data_path="$(pwd)/var/certbot"
-compose="$(pwd)/app/ops/bin/compose"
+data_path="$(pwd)/../var/certbot"
+compose="ops/bin/compose"
 
 if [ -d "$data_path" ]; then
   read -p "Existing data found for $domains. Continue and replace existing certificate? (y/N) " decision
