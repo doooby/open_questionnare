@@ -2,7 +2,7 @@
 set -e
 
 echo "########### Building app image"
-source ops/lib/build_app.sh ops
+#source ops/lib/build_app.sh ops
 echo
 
 echo "########### Building assets"
