@@ -52,10 +52,7 @@ do
     sudo git reset --hard origin/master
     echo
 
-    echo "POST-RECEIVE  building"
     sudo ../build_app
-
-    echo "POST-RECEIVE  done"
 
 done
 EOF
