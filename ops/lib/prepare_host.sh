@@ -47,12 +47,11 @@ do
 
     set -e
 
-    worktree=../app
-    sudo git --work-tree=$worktree checkout -f
-    sudo git --work-tree=$worktree clean -fd
+    cd ../app
+    sudo git fetch origin
+    sudo git reset --hard origin/master
 
     echo "POST-RECEIVE  building"
-    cd $worktree
     sudo ../build_app
 
     echo "POST-RECEIVE  done"
