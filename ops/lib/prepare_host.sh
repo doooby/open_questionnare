@@ -1,6 +1,6 @@
 name=$1
 
-if [ -n $name ]; then
+if [ -z $name ]; then
   echo "Usage: <script> <name>"
   echo "First argument passed is a name of the stack."
   echo "That is used for group name and directory name in /opt."
@@ -47,8 +47,8 @@ do
 
 done
 EOF
-chown root:"$name" git_hook
-chmod 550 git_hook
+chown root:"$name" $git_hook
+chmod 550 $git_hook
 
 # write build hook
 git_hook=$repo_path/hooks/post-receive
@@ -78,8 +78,8 @@ do
 
 done
 EOF
-chown root:"$name" git_hook
-chmod 550 git_hook
+chown root:"$name" $git_hook
+chmod 550 $git_hook
 echo
 
 echo "--- finished"
