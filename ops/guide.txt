@@ -22,7 +22,7 @@
 * checkout workdir
     `sudo git clone --single-branch --branch master $stack_path/app.git $stack_path/app`
 * init the env
-    `sudo su -c "cd $stack_path/app && bash $ops_dir/lib/install_app.sh $ops_dir"`
+    `sudo su -c "cd $stack_path/app && bash $ops_dir/lib/build_app.sh $ops_dir"`
 * link the build script
     `sudo ln -s $stack_path/app/$ops_dir/bin/build $stack_path/build_app`
 * create db + import, this needs postgres running
