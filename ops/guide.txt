@@ -26,7 +26,8 @@
 * link the build script
     `sudo ln -s $stack_path/app/$ops_dir/bin/build $stack_path/build_app`
 * create db + import, this needs postgres running
-    `sudo $stack_path/app/$ops_dir/bin/compose up -d pg`
+    `sudo su -c "cd $stack_path/app && $ops_dir/bin/compose up -d pg"`
+    `sudo su -c "cd $stack_path/app && $ops_dir/bin/compose run --rm app bin/rails db:create"`
 * compose up
     `sudo $stack_path/app/$ops_dir/bin/compose up -d`
 * test app + db

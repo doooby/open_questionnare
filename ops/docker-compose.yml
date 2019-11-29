@@ -7,9 +7,7 @@ services:
       - ../../var/pg_data:/var/lib/postgresql/data
 
   app:
-    build:
-      context: ../..
-      dockerfile: ./app/ops/app.Dockerfile
+    image: app:build
     command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b '0.0.0.0'"
     depends_on:
       - pg
