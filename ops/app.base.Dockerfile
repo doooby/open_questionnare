@@ -7,8 +7,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add && \
 RUN apt-get update -qq && \
     apt-get install -y apt-utils postgresql-client nodejs yarn
 
-RUN mkdir /app
+COPY app /app
 WORKDIR /app
-COPY . .
 
 ENV RAILS_ENV=production
