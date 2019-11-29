@@ -9,7 +9,7 @@ source $ops_dir/lib/build_app.sh $ops_dir
 echo
 
 echo "--- Building assets"
-docker run --rm -v ../var/www:/var/www -v ../var/assets:/app/public/assets app:build bash -c "cp -R public/* /var/www && bin/rails assets:precompile assets:clean"
+docker run --rm -v $(pwd)../var/www:/var/www -v $(pwd)../var/assets:/app/public/assets app:build bash -c "cp -R public/* /var/www && bin/rails assets:precompile assets:clean"
 echo
 
 echo "--- Building services images"
