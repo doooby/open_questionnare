@@ -1,6 +1,6 @@
 FROM nginx:stable
 
-COPY config/nginx_app.conf /etc/nginx/conf.d/app.conf
+COPY app/ops/config/nginx_app.conf /etc/nginx/conf.d/app.conf
 RUN rm /etc/nginx/conf.d/default.conf
 
 COPY var/www /var/www/app
