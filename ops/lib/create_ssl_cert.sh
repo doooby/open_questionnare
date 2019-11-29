@@ -53,6 +53,7 @@ echo "### Starting nginx ..."
 $compose up --force-recreate -d nginx
 echo
 
+exit 0
 echo "### Deleting dummy certificate for $domains ..."
 $compose run --rm --entrypoint "\
   rm -Rf /etc/letsencrypt/live/$domains && \
