@@ -3,12 +3,14 @@ services:
 
   pg:
     image: postgres:12
+    restart: unless-stopped
     volumes:
-      - pg_data:/var/lib/postgresql/data
+      - ../../pg_data:/var/lib/postgresql/data
 
   app:
     image: app:build
     command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b '0.0.0.0'"
+    restart: unless-stopped
     depends_on:
       - pg
     expose:
@@ -21,6 +23,7 @@ services:
       context: ../..
       dockerfile: ./app/ops/nginx.Dockerfile
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    restart: unless-stopped
     ports:
       - 80:80
       - 443:443
@@ -32,9 +35,7 @@ services:
   certbot:
     image: certbot/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    restart: unless-stopped
     volumes:
       - ../../var/certbot/conf:/etc/letsencrypt
       - ../../var/certbot/www:/var/www/certbot
-
-volumes:
-  pg_data:

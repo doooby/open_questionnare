@@ -39,3 +39,11 @@
 ### building / deploying app
 * test push
 * prosper
+
+
+----------------------------------
+* yarn install & build
+* do vendor jakozto cache?
+* jeden kontainer pro nginx + cert renew
+* do app pridat logrotate
+* jak docker & cron?
