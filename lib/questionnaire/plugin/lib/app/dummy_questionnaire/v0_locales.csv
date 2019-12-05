@@ -1,0 +1,10 @@
+key,en
+groups.def.abbr,Def
+groups.def.text,Default Group
+attrs.form_id,Form ID
+attrs.user,User
+attrs.created_at,Created at
+attrs.updated_at,Updated at
+attrs.finalized_at,Finalized at
+attrs.version,Version
+attrs.name,Name
