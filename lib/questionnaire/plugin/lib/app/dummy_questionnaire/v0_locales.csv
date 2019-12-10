@@ -1,10 +1,19 @@
 key,en
-groups.def.abbr,Def
-groups.def.text,Default Group
-attrs.form_id,Form ID
+
+### Groups translations
+groups.one.abbr,Def
+groups.one.text,Default Group
+
+### Fields translations
+attrs.form_id,Form ID,
 attrs.user,User
 attrs.created_at,Created at
 attrs.updated_at,Updated at
 attrs.finalized_at,Finalized at
 attrs.version,Version
 attrs.name,Name
+attrs.self,Self-Confidence
+attrs.mood ,"What is your mood, kind sir?"
+attrs.meaning,"The answer to life, universe and everything is:"
+attrs.long,Long text
+attrs.number,Number
