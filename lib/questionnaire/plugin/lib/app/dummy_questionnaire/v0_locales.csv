@@ -17,6 +17,12 @@ q.attrs.mood ,"What is your mood, kind sir?"
 q.attrs.meaning,"The answer to life, universe and everything is:"
 q.attrs.long,Long text
 q.attrs.number,Number
-
+q.attrs.filter,Filtered options
 
 ### Options translations
+q.opts.self.0,-0
+q.opts.self.1,1
+q.opts.self.2,2
+q.opts.self.3,3
+q.opts.self.4,4
+q.opts.self.5,5+
