@@ -1,5 +1,3 @@
-require 'patron'
-
 module ElasticModel
   extend ActiveSupport::Concern
 
@@ -20,6 +18,7 @@ module ElasticModel
   def self.client
     @client ||= begin
       host = ConfigStore.from('elasticsearch').fetch 'host'
+      require 'patron'
       # I use PATRON for transport API to have persistent connections
       # but that uses libcurl internally, which makes it not thread-safe
       ConnectionPool::Wrapper.new size: 3 do
