@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
     controller 'android/api', '' do
       post :login
+      post :logout
     end
 
   end

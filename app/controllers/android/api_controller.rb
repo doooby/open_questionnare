@@ -15,6 +15,7 @@ module Android
 
       if current_user
         render_ok login: current_user.login,
+            name: current_user.name,
             token: current_user.new_token!
 
       else
@@ -26,11 +27,11 @@ module Android
       end
     end
 
-    # def logout
-    #   token = params[:token].presence
-    #   current_user&.discard_token! token if token
-    #   render_ok
-    # end
+    def logout
+      token = params[:token].presence
+      current_user&.discard_token! token if token
+      render_ok
+    end
 
     # def upload
     #   list = params[:forms].presence
