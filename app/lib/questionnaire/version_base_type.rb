@@ -11,9 +11,9 @@ class Questionnaire::VersionBaseType
     @attributes = data.with_indifferent_access
 
     self.class.fields.values.
-        select{|f| f.type.preprocess}.
+        select{|f| f.type[:preprocess]}.
         each do |field|
-      attributes[field.name] = field.type.preprocess.(attributes[field.name])
+      attributes[field.name] = field.type[:preprocess].(attributes[field.name])
     end
   end
 
@@ -34,8 +34,8 @@ class Questionnaire::VersionBaseType
 
     attrs = attributes.to_hash.slice *(fields.map &:name)
 
-    fields.select{|f| f.type.sanitize}.each do |field|
-      attrs[field.name] = field.type.sanitize.(attrs[field.name])
+    fields.select{|f| f.type[:sanitize]}.each do |field|
+      attrs[field.name] = field.type[:sanitize].(attrs[field.name])
     end
 
     attrs.reject{|_, value| value.nil?}

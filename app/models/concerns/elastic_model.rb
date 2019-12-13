@@ -1,6 +1,10 @@
 module ElasticModel
   extend ActiveSupport::Concern
 
+  def to_elastic_document
+    {}
+  end
+
   def elastic_index!
     self.class.elastic.index_document id, to_elastic_document
   end
@@ -11,7 +15,7 @@ module ElasticModel
 
   class_methods do
     def elastic
-      @elastic_proxy ||= ModelProxy.new(self, Elastic.client)
+      @elastic_proxy ||= ElasticModel::Proxy.new(self, ElasticModel.client)
     end
   end
 

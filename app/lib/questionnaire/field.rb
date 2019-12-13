@@ -41,7 +41,7 @@ class Questionnaire::Field
     if value.nil? && @can_be_nil
       true
     else
-      type.validate.(value)
+      type[:validate].(value)
     end
   end
 
@@ -64,6 +64,9 @@ class Questionnaire::Field
   ########## DEFINED TYPES
 
   def self.put_type name, definition
+    unless definition[:validate]
+      raise "type #{name} doesn't define :validate function"
+    end
     definition[:name] = name.to_sym
     definition[:to_csv] ||= TO_CSV_DEF
     TYPES[name] = definition.freeze

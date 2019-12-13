@@ -8,7 +8,7 @@ class Questionnaire < ApplicationRecord
   belongs_to :user
 
   scope :select_version, -> (version=nil) {
-    version ||= Questionnaire.singleton_type::CURRENT_VERSION
+    version ||= Questionnaire.singleton_type.current_version.rank
     where "data->>'version' = '#{version}'"
   }
 
@@ -26,7 +26,7 @@ class Questionnaire < ApplicationRecord
     version = to_version || (return false)
     version = version.upgrade
 
-    return false if version.attributes['version'] != Questionnaire.singleton_type::CURRENT_VERSION
+    return false if version.attributes['version'] != Questionnaire.singleton_type.current_version.rank
 
     self.data = version.sanitized_attributes
     true
@@ -58,7 +58,7 @@ class Questionnaire < ApplicationRecord
     unless list.empty?
       Questionnaire.transaction{ list.each &:save! }
 
-      index_only_version = singleton_type::CURRENT_VERSION
+      index_only_version = singleton_type.current_version.rank
       singleton_type.elastic.index_documents(
           list.select{|f| f.data['version'] == index_only_version}
       )

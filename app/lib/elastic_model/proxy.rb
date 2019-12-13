@@ -6,7 +6,7 @@ module ElasticModel
     def initialize model, client
       @model = model
       @client = client
-      @index_name = "#{EmaWeb.env}_#{model.name.underscore.gsub '/', '_'}"
+      @index_name = "#{Rails.env}_#{model.name.underscore.gsub '/', '_'}"
       @queries = Object.new
     end
 
@@ -136,7 +136,7 @@ module ElasticModel
       end
 
       def with_enabled &block
-        ModelProxy.with_enabled model, &block
+        Proxy.with_enabled model, &block
       end
 
       def prepare_with_records records=model.all

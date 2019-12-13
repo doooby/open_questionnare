@@ -5,9 +5,9 @@ class ConfigStore
   end
 
   def self.from file
-    @loaded_configs[file] ||= begin
+    loaded_configs[file] ||= begin
       config = new file, load_data!(file)
-      @loaded_configs[file] = config
+      loaded_configs[file] = config
     end
   end
 

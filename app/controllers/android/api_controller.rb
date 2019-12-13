@@ -33,16 +33,16 @@ module Android
       render_ok
     end
 
-    # def upload
-    #   list = params[:forms].presence
-    #
-    #   if list
-    #     list.map!{|rec| rec.tap(&:permit!).to_h }
-    #     Questionnaire.import! list, current_user
-    #   end
-    #
-    #   render_ok
-    # end
+    def upload
+      list = params[:forms].presence
+
+      if list
+        list.map!{|rec| rec.tap(&:permit!).to_h }
+        Questionnaire.import! list, current_user
+      end
+
+      render_ok
+    end
 
     private
 

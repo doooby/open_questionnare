@@ -14,6 +14,7 @@ gem 'rack-cors'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'connection_pool'
 gem 'patron'
+gem 'elasticsearch'
 # gem 'jbuilder', '~> 2.7'
 
 gem 'oq_web_plugin', path: File.expand_path('lib/questionnaire/plugin', __dir__)
