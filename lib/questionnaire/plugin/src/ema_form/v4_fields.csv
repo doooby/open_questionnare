@@ -2,10 +2,11 @@ name,group,type,options
 
 school_name,school,string,
 school_no,school,integer,
-school_province,school,string,select=provinces
-school_municipality,school,string,select=municipalities
-school_commune,school,string,select=communes
+school_province,school,string,select=provinces&filteredSelect
+school_municipality,school,string,select=municipalities&filteredSelect
+school_commune,school,string,select=communes&filteredSelect
 school_cluster,school,integer,
+school_gps,school,gps,optional
 
 teacher_name,teacher,string,
 teacher_email,teacher,string,
@@ -14,8 +15,8 @@ teacher_exp,teacher,integer,
 teacher_pedag,teacher,bool,
 teacher_pedag_val,teacher,string,select=[Bc:Me:EFP:pr]&conditional
 
-class_shift,class,string,select=[1-3]
-class_ord,class,string,select=[0-13]
+class_shift,class,integer,select=[1-3]
+class_ord,class,integer,select=[0-13]
 class_students_present,class,integer,
 class_students_total,class,integer,
 class_discipline,class,string,select=[bi:ns:pl:wo:ar:mc:mu:bs:ps:ge:hi:pt:fr:en:lo:ma:ch]
