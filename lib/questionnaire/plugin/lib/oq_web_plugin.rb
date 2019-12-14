@@ -3,7 +3,7 @@ module OqWebPlugin
 
     config.before_configuration do |app|
       app.config.paths.add(
-          File.expand_path('../app', __FILE__),
+          File.expand_path('../../src', __FILE__),
           eager_load: true
       )
     end
