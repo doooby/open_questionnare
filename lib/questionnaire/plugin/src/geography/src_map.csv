@@ -1,0 +1,540 @@
+l1,l1_name,l2,l2_name,l3,l3_name
+01,Bengo,001,Ambriz,001,Ambriz
+01,Bengo,001,Ambriz,002,Bela Vista
+01,Bengo,001,Ambriz,003,Tabi
+01,Bengo,002,Dande,004,Barra do Dande
+01,Bengo,002,Dande,005,Caxito
+01,Bengo,002,Dande,006,Kikabo
+01,Bengo,002,Dande,007,Mabubas
+01,Bengo,002,Dande,008,Ucua
+01,Bengo,002,Dande,299,Funda
+01,Bengo,005,Nambuangongo,017,Gombe
+01,Bengo,005,Nambuangongo,018,Kage
+01,Bengo,005,Nambuangongo,019,Kanacassala
+01,Bengo,005,Nambuangongo,020,Kicunzo
+01,Bengo,005,Nambuangongo,021,Kixico
+01,Bengo,005,Nambuangongo,022,Muxiluando
+01,Bengo,005,Nambuangongo,023,Zala
+01,Bengo,040,Bula-Atumba,145,Bula-Atumba
+01,Bengo,040,Bula-Atumba,146,Kiaje
+01,Bengo,043,Dembos-Quibaxe,153,Kibaxe
+01,Bengo,043,Dembos-Quibaxe,154,Paredes
+01,Bengo,043,Dembos-Quibaxe,155,Piri
+01,Bengo,043,Dembos-Quibaxe,156,S. Jose das Matas
+01,Bengo,047,Pango-Aluquém,166,Pango-Aluquem
+02,Benguela,006,Baía Farta,024,Baia Farta
+02,Benguela,006,Baía Farta,025,Dombe Grande
+02,Benguela,006,Baía Farta,026,Ekimina
+02,Benguela,006,Baía Farta,027,Kalahanga
+02,Benguela,007,Balombo,028,Balombo
+02,Benguela,007,Balombo,029,Chindumbo
+02,Benguela,007,Balombo,030,Chingongo
+02,Benguela,008,Benguela,031,Benguela
+02,Benguela,009,Bocoio,032,Bocoio
+02,Benguela,009,Bocoio,033,Cavimbe
+02,Benguela,009,Bocoio,034,Chila
+02,Benguela,009,Bocoio,035,Monte Belo
+02,Benguela,009,Bocoio,036,Passe
+02,Benguela,010,Caimbambo,037,Cayavi
+02,Benguela,010,Caimbambo,038,Kaimbambo
+02,Benguela,010,Caimbambo,039,Kanhamela
+02,Benguela,010,Caimbambo,040,Katengue
+02,Benguela,010,Caimbambo,041,Wyiagombe
+02,Benguela,011,Chongoroi,042,Bolonguela
+02,Benguela,011,Chongoroi,043,Chongoroi
+02,Benguela,012,Cubal,044,Cubal
+02,Benguela,012,Cubal,045,Kapupa
+02,Benguela,012,Cubal,046,Lambala
+02,Benguela,012,Cubal,047,Quendo
+02,Benguela,013,Ganda,048,Babaera
+02,Benguela,013,Ganda,049,Chikuma
+02,Benguela,013,Ganda,050,Ebanga
+02,Benguela,013,Ganda,051,Ganda
+02,Benguela,013,Ganda,052,Kaseke
+02,Benguela,014,Lobito,054,Egito-Praia
+02,Benguela,014,Lobito,055,Kanjala
+02,Benguela,014,Lobito,057,Lobito
+02,Benguela,164,Catumbela,053,Biopio
+02,Benguela,164,Catumbela,056,Katumbela
+02,Benguela,164,Catumbela,057,Lobito
+03,Bié,015,Andulo,058,Andulo
+03,Bié,015,Andulo,059,Chivaulo
+03,Bié,015,Andulo,060,Kalucinga
+03,Bié,015,Andulo,061,Kassumbe
+03,Bié,016,Camacupa,062,Kamakupa
+03,Bié,016,Camacupa,063,Kwanza
+03,Bié,016,Camacupa,064,Ringoma
+03,Bié,016,Camacupa,065,St. Antonio da Muinha
+03,Bié,016,Camacupa,066,Umpulo
+03,Bié,017,Catabola,067,Chipeta
+03,Bié,017,Catabola,068,Chiuca
+03,Bié,017,Catabola,069,Kaiuera
+03,Bié,017,Catabola,070,Katabola
+03,Bié,018,Chinguar,071,Chinguar
+03,Bié,018,Chinguar,072,Kangote
+03,Bié,018,Chinguar,073,Kutato
+03,Bié,019,Chitembo,074,Cachingues
+03,Bié,019,Chitembo,075,Chitembo
+03,Bié,019,Chitembo,076,Malengue
+03,Bié,019,Chitembo,077,Mumbue
+03,Bié,019,Chitembo,078,Mutumbo
+03,Bié,019,Chitembo,079,Soma Kwanza
+03,Bié,020,Cuemba,080,Kuemba
+03,Bié,020,Cuemba,081,Luando
+03,Bié,020,Cuemba,082,Munhango
+03,Bié,020,Cuemba,083,Sachinemuna
+03,Bié,021,Cunhinga,084,Kunhinga
+03,Bié,022,Cuito (Kuito),085,Cambandua
+03,Bié,022,Cuito (Kuito),086,Chicala
+03,Bié,022,Cuito (Kuito),087,Kuito
+03,Bié,022,Cuito (Kuito),088,Trumba
+03,Bié,023,N'harea,089,Dando
+03,Bié,023,N'harea,090,Gamba
+03,Bié,023,N'harea,091,Kaiei
+03,Bié,023,N'harea,092,Lubia
+03,Bié,023,N'harea,093,Nharea
+04,Cabinda,024,Belize,094,Belize
+04,Cabinda,024,Belize,095,Luali
+04,Cabinda,024,Belize,096,Mikonje
+04,Cabinda,025,Buco Zau,097,Buco Zau
+04,Cabinda,025,Buco Zau,098,Nekuto
+04,Cabinda,025,Buco Zau,099,Nhuca
+04,Cabinda,026,Cabinda,100,Cabinda
+04,Cabinda,026,Cabinda,101,Malembo
+04,Cabinda,026,Cabinda,102,Tando Zinze
+04,Cabinda,027,Cacongo (Landana),103,Dinge
+04,Cabinda,027,Cacongo (Landana),104,Kakongo
+04,Cabinda,027,Cacongo (Landana),105,Massabi
+05,Cuando Cubango,028,Calai,106,Kalai
+05,Cuando Cubango,028,Calai,107,Maue
+05,Cuando Cubango,029,Cuangar,108,Bondo
+05,Cuando Cubango,029,Cuangar,109,Cuangar
+05,Cuando Cubango,029,Cuangar,110,Savate
+05,Cuando Cubango,030,Cuchi,111,Chinguanja
+05,Cuando Cubango,030,Cuchi,112,Kuchi
+05,Cuando Cubango,030,Cuchi,113,Kutato
+05,Cuando Cubango,031,Cuito Cuanavale,114,Baixo Longa
+05,Cuando Cubango,031,Cuito Cuanavale,115,Kuito Kuanavale
+05,Cuando Cubango,031,Cuito Cuanavale,116,Longa
+05,Cuando Cubango,031,Cuito Cuanavale,117,Lupire
+05,Cuando Cubango,032,Dirico,118,Dirico
+05,Cuando Cubango,032,Dirico,119,Mucusso
+05,Cuando Cubango,032,Dirico,120,Xa-Mavera
+05,Cuando Cubango,033,Mavinga,121,Kunjamba
+05,Cuando Cubango,033,Mavinga,122,Kutuile
+05,Cuando Cubango,033,Mavinga,123,Luengue
+05,Cuando Cubango,033,Mavinga,124,Mavinga
+05,Cuando Cubango,034,Menongue,125,Kaiundo
+05,Cuando Cubango,034,Menongue,126,Kueio
+05,Cuando Cubango,034,Menongue,127,Menongue
+05,Cuando Cubango,035,Nancova,128,Nancova
+05,Cuando Cubango,035,Nancova,129,Rito
+05,Cuando Cubango,036,Rivungo,130,Luiana
+05,Cuando Cubango,036,Rivungo,131,Neriquinha
+05,Cuando Cubango,036,Rivungo,132,Rivungo
+06,Cuanza Norte,037,Ambaca,133,Bindo
+06,Cuanza Norte,037,Ambaca,134,Kamabatela
+06,Cuanza Norte,037,Ambaca,135,Luinga
+06,Cuanza Norte,037,Ambaca,136,Maua
+06,Cuanza Norte,037,Ambaca,137,Tango
+06,Cuanza Norte,038,Banga,138,Aldeia Nova
+06,Cuanza Norte,038,Banga,139,Banga
+06,Cuanza Norte,038,Banga,140,Kaculo Kabassa
+06,Cuanza Norte,038,Banga,141,Kariamba
+06,Cuanza Norte,038,Banga,143,Kikiemba
+06,Cuanza Norte,039,Bolongongo,142,Bolongongo
+06,Cuanza Norte,039,Bolongongo,143,Kikiemba
+06,Cuanza Norte,039,Bolongongo,144,Terreiro
+06,Cuanza Norte,041,Cambambe (Kambambe),147,Danje ia Menha
+06,Cuanza Norte,041,Cambambe (Kambambe),148,Dondo
+06,Cuanza Norte,041,Cambambe (Kambambe),149,S. Pedro da Kilemba
+06,Cuanza Norte,041,Cambambe (Kambambe),150,Zenza do Itombe
+06,Cuanza Norte,041,Cambambe (Kambambe),165,Kazua
+06,Cuanza Norte,042,Cazengo,151,Kanhoca
+06,Cuanza Norte,042,Cazengo,152,Ndalatando
+06,Cuanza Norte,044,Golungo Alto,157,Cerca
+06,Cuanza Norte,044,Golungo Alto,158,Golungo Alto
+06,Cuanza Norte,044,Golungo Alto,159,Kanbomdo
+06,Cuanza Norte,044,Golungo Alto,160,Kiluanje
+06,Cuanza Norte,045,Lucala,161,Kiangombe
+06,Cuanza Norte,045,Lucala,162,Lukala
+06,Cuanza Norte,046,Ngonguembo,163,Camame
+06,Cuanza Norte,046,Ngonguembo,164,Kilombo dos Dembos
+06,Cuanza Norte,048,Quiculungo,167,Kiculungo
+06,Cuanza Norte,049,Samba Cajú,168,Samba Caju
+06,Cuanza Norte,049,Samba Cajú,169,Samba Lukala
+07,Cuanza Sul,050,Amboim (Gabela),170,Assango
+07,Cuanza Sul,050,Amboim (Gabela),171,Gabela
+07,Cuanza Sul,051,Cassongue,172,Atome
+07,Cuanza Sul,051,Cassongue,173,Dumbi
+07,Cuanza Sul,051,Cassongue,174,Kassongue
+07,Cuanza Sul,051,Cassongue,175,Pambangala
+07,Cuanza Sul,052,Conda,176,Konda
+07,Cuanza Sul,052,Conda,177,Kunju
+07,Cuanza Sul,053,Ebo,178,Conde
+07,Cuanza Sul,053,Ebo,179,Ebo
+07,Cuanza Sul,053,Ebo,180,Kassanje
+07,Cuanza Sul,054,Libolo (Calulo),181,Kabuta
+07,Cuanza Sul,054,Libolo (Calulo),182,Kalulo
+07,Cuanza Sul,054,Libolo (Calulo),183,Kissongo
+07,Cuanza Sul,054,Libolo (Calulo),184,Munenga
+07,Cuanza Sul,055,Mussende,185,Kienha
+07,Cuanza Sul,055,Mussende,186,Mussende
+07,Cuanza Sul,055,Mussende,187,Sao Lucas
+07,Cuanza Sul,056,Porto Amboim,188,Kapolo
+07,Cuanza Sul,056,Porto Amboim,189,Porto Amboim
+07,Cuanza Sul,057,Quibala,190,Kariango
+07,Cuanza Sul,057,Quibala,191,Kibala
+07,Cuanza Sul,057,Quibala,192,Lonhe
+07,Cuanza Sul,057,Quibala,193,Ndala Kachimbo
+07,Cuanza Sul,058,Quilenda,194,Kilenda
+07,Cuanza Sul,058,Quilenda,195,Kirimbo
+07,Cuanza Sul,059,Seles (Uku Seles),196,Amboiva
+07,Cuanza Sul,059,Seles (Uku Seles),197,Botera
+07,Cuanza Sul,059,Seles (Uku Seles),198,Ucu-Seles
+07,Cuanza Sul,060,Sumbe (Ngangula),199,Gangula
+07,Cuanza Sul,060,Sumbe (Ngangula),200,Gungo
+07,Cuanza Sul,060,Sumbe (Ngangula),201,Kikombo
+07,Cuanza Sul,060,Sumbe (Ngangula),202,Sumbe
+07,Cuanza Sul,061,Cela (Waku Kungo),203,Kissanga Kungo
+07,Cuanza Sul,061,Cela (Waku Kungo),204,Sanga
+07,Cuanza Sul,061,Cela (Waku Kungo),205,Waco Kungo
+08,Cunene,062,Cahama,206,Kahama
+08,Cunene,062,Cahama,207,Otchinjau
+08,Cunene,063,Cuanhama,208,Evale
+08,Cunene,063,Cuanhama,209,Kafima
+08,Cunene,063,Cuanhama,210,Mongua
+08,Cunene,063,Cuanhama,211,Onjiva
+08,Cunene,063,Cuanhama,212,Oximolo
+08,Cunene,064,Curoca,213,Chitado
+08,Cunene,064,Curoca,214,Onkokwa
+08,Cunene,065,Cuvelai,215,Kalonga
+08,Cunene,065,Cuvelai,216,Kuvati
+08,Cunene,065,Cuvelai,217,Kuvelai
+08,Cunene,065,Cuvelai,218,Mupa
+08,Cunene,066,Namacunde,219,Namakunde
+08,Cunene,066,Namacunde,220,Shiede
+08,Cunene,067,Ombadja,221,Humbe
+08,Cunene,067,Ombadja,222,Mukope
+08,Cunene,067,Ombadja,223,Naulila
+08,Cunene,067,Ombadja,224,Ombala yo Mungu
+08,Cunene,067,Ombadja,225,Xangongo
+09,Huíla,068,Caconda,226,Gungue
+09,Huíla,068,Caconda,227,Kakonda
+09,Huíla,068,Caconda,228,Kusse
+09,Huíla,068,Caconda,229,Uaba
+09,Huíla,069,Caluquembe,230,Kalepi
+09,Huíla,069,Caluquembe,231,Kalukembe
+09,Huíla,069,Caluquembe,232,Ngola
+09,Huíla,070,Chibia,233,Chibia
+09,Huíla,070,Chibia,234,Jau
+09,Huíla,070,Chibia,235,Kapunda Kavilongo
+09,Huíla,070,Chibia,236,Kihita
+09,Huíla,071,Chicomba,237,Chicomba
+09,Huíla,071,Chicomba,238,Cutenda
+09,Huíla,072,Chipindo,239,Bambi
+09,Huíla,072,Chipindo,240,Chipindo
+09,Huíla,073,Gambos (ex-Chiange),241,Chiange
+09,Huíla,073,Gambos (ex-Chiange),242,Chimbemba
+09,Huíla,074,Humpata,243,Humpata
+09,Huíla,075,Jamba,244,Dongo
+09,Huíla,075,Jamba,245,Jamba
+09,Huíla,075,Jamba,246,Kassinga
+09,Huíla,076,Cuvango (Kuvango),247,Galangue
+09,Huíla,076,Cuvango (Kuvango),248,Kuvango
+09,Huíla,076,Cuvango (Kuvango),249,Vikungo
+09,Huíla,077,Lubango,251,Hoque
+09,Huíla,077,Lubango,252,Huila
+09,Huíla,077,Lubango,253,Lubango
+09,Huíla,078,Matala,254,Kapelongo
+09,Huíla,078,Matala,255,Matala
+09,Huíla,078,Matala,256,Mulondo
+09,Huíla,079,Quilengues,257,Dinde
+09,Huíla,079,Quilengues,258,Impulo
+09,Huíla,079,Quilengues,259,Kilengue
+09,Huíla,080,Quipungo (Tchipungo),260,Tchipungo
+09,Huíla,165,Cacula,232,Ngola
+09,Huíla,165,Cacula,250,Cacula
+09,Huíla,165,Cacula,259,Kilengue
+09,Huíla,165,Cacula,260,Tchipungo
+10,Huambo,081,Bailundo,261,Bailundo
+10,Huambo,081,Bailundo,262,Bimbe
+10,Huambo,081,Bailundo,263,Hengue
+10,Huambo,081,Bailundo,264,Lunge
+10,Huambo,081,Bailundo,265,Luvemba
+10,Huambo,082,Caála,266,Kaala
+10,Huambo,082,Caála,267,Kalenga
+10,Huambo,082,Caála,268,Kalima
+10,Huambo,082,Caála,269,Katata
+10,Huambo,083,Catchiungo,270,Chinhama
+10,Huambo,083,Catchiungo,271,Chiumbo
+10,Huambo,083,Catchiungo,272,Kachiungo
+10,Huambo,084,Ecunha (Ekunha),273,Ekunha
+10,Huambo,084,Ecunha (Ekunha),274,Tchipeio
+10,Huambo,085,Huambo,275,Chipipa
+10,Huambo,085,Huambo,276,Huambo
+10,Huambo,085,Huambo,277,Kalima
+10,Huambo,086,Londuimbale,278,Alto Uama
+10,Huambo,086,Londuimbale,279,Galanga
+10,Huambo,086,Londuimbale,280,Kumbila
+10,Huambo,086,Londuimbale,281,Londuimbali
+10,Huambo,086,Londuimbale,282,Ussoke
+10,Huambo,087,Longonjo,283,Chilata
+10,Huambo,087,Longonjo,284,Katabola
+10,Huambo,087,Longonjo,285,Lepi
+10,Huambo,087,Longonjo,286,Longonjo
+10,Huambo,088,Mungo,287,Kambuengo
+10,Huambo,088,Mungo,288,Mungo
+10,Huambo,089,Tchikala-Tcholohanga,289,Hungulo
+10,Huambo,089,Tchikala-Tcholohanga,290,Mbave
+10,Huambo,089,Tchikala-Tcholohanga,291,Sambo
+10,Huambo,089,Tchikala-Tcholohanga,292,Thicala-Thilohanga
+10,Huambo,090,Tchinjenje,293,Chiaca
+10,Huambo,090,Tchinjenje,294,Chinjenje
+10,Huambo,091,Ukuma,295,Kakoma
+10,Huambo,091,Ukuma,296,Mundundo
+10,Huambo,091,Ukuma,297,Ukuma
+11,Luanda,003,Icolo e Bengo,009,Bom Jesus
+11,Luanda,003,Icolo e Bengo,010,Calomboloca
+11,Luanda,003,Icolo e Bengo,011,Catete
+11,Luanda,003,Icolo e Bengo,012,Kabiri
+11,Luanda,004,"Quissama (Muxima, Quiçama)",013,Dembo Chio
+11,Luanda,004,"Quissama (Muxima, Quiçama)",014,Kixinje
+11,Luanda,004,"Quissama (Muxima, Quiçama)",015,Mumbondo
+11,Luanda,004,"Quissama (Muxima, Quiçama)",016,Muxima
+11,Luanda,092,Cacuaco,298,Cacuaco
+11,Luanda,092,Cacuaco,299,Funda
+11,Luanda,092,Cacuaco,300,Kikolo
+11,Luanda,093,Cazenga,300,Kikolo
+11,Luanda,093,Cazenga,301,Cazenga
+11,Luanda,093,Cazenga,302,Hoji Ya Henda
+11,Luanda,093,Cazenga,303,Tala Hadi
+11,Luanda,094,Luanda,304,Ilha do Cabo
+11,Luanda,094,Luanda,305,Ingombota
+11,Luanda,094,Luanda,306,Kinanga
+11,Luanda,094,Luanda,307,Maculusso
+11,Luanda,094,Luanda,308,Patrice Lumumba
+11,Luanda,094,Luanda,309,Kilamba Kiaxi
+11,Luanda,094,Luanda,310,Cassequel
+11,Luanda,094,Luanda,311,Maianga
+11,Luanda,094,Luanda,312,Prenda
+11,Luanda,094,Luanda,313,Marcal
+11,Luanda,094,Luanda,314,Rangel
+11,Luanda,094,Luanda,315,Terra Nova
+11,Luanda,094,Luanda,319,Samba
+11,Luanda,094,Luanda,320,N'gola Kilwanji
+11,Luanda,094,Luanda,321,Sambizanga
+11,Luanda,094,Luanda,323,Viana Sede
+11,Luanda,098,Belas (Samba),309,Kilamba Kiaxi
+11,Luanda,098,Belas (Samba),316,Benfica
+11,Luanda,098,Belas (Samba),317,Futungo de Belas
+11,Luanda,098,Belas (Samba),318,Mussulo
+11,Luanda,098,Belas (Samba),323,Viana Sede
+11,Luanda,098,Belas (Samba),324,Viana
+11,Luanda,100,Viana,322,Calumbo
+11,Luanda,100,Viana,323,Viana Sede
+12,Lunda Norte,101,Cambulo,325,Kachimo
+12,Lunda Norte,101,Cambulo,326,Kambulo
+12,Lunda Norte,101,Cambulo,327,Kanzar
+12,Lunda Norte,101,Cambulo,328,Luia
+12,Lunda Norte,102,Capenda-Camulemba,329,Kapenda Kamulemba
+12,Lunda Norte,102,Capenda-Camulemba,330,Xinge
+12,Lunda Norte,103,Caungula,331,Camaxilo
+12,Lunda Norte,103,Caungula,332,Kaungula
+12,Lunda Norte,104,Chitato (Lóvua),333,Chitato
+12,Lunda Norte,104,Chitato (Lóvua),334,Lovua
+12,Lunda Norte,104,Chitato (Lóvua),335,Luachimo
+12,Lunda Norte,105,Cuango,336,Cuango
+12,Lunda Norte,105,Cuango,337,Luremo
+12,Lunda Norte,106,Cuilo,338,Caluango
+12,Lunda Norte,106,Cuilo,339,Cuilo
+12,Lunda Norte,107,Lubalo,340,Luangue
+12,Lunda Norte,107,Lubalo,341,Lubalo
+12,Lunda Norte,107,Lubalo,342,Muvulage
+12,Lunda Norte,108,Lucapa,343,Camissombo
+12,Lunda Norte,108,Lucapa,344,Capaia
+12,Lunda Norte,108,Lucapa,345,Lucapa
+12,Lunda Norte,108,Lucapa,346,Xa-Cassau
+12,Lunda Norte,109,Xá-Muteba,347,Cassange
+12,Lunda Norte,109,Xá-Muteba,348,Iongo
+12,Lunda Norte,109,Xá-Muteba,350,Xa-Muteba
+13,Lunda Sul,110,Cacolo,330,Xinge
+13,Lunda Sul,110,Cacolo,340,Luangue
+13,Lunda Sul,110,Cacolo,351,Alto-Chicapa
+13,Lunda Sul,110,Cacolo,352,Cacolo
+13,Lunda Sul,110,Cacolo,353,Cucumbi
+13,Lunda Sul,110,Cacolo,354,Xassengue
+13,Lunda Sul,111,Dala,355,Cazage
+13,Lunda Sul,111,Dala,356,Dala
+13,Lunda Sul,111,Dala,357,Luma Cassai
+13,Lunda Sul,112,Muconda,358,Cassai
+13,Lunda Sul,112,Muconda,359,Chiluange
+13,Lunda Sul,112,Muconda,360,Muconda
+13,Lunda Sul,112,Muconda,361,Muriege
+13,Lunda Sul,113,Saurimo,362,Mona Quimbundo
+13,Lunda Sul,113,Saurimo,363,Saurimo
+13,Lunda Sul,113,Saurimo,364,Sombo
+14,Malanje,114,Cacuso,365,Cacuso
+14,Malanje,114,Cacuso,366,Kizenga
+14,Malanje,114,Cacuso,367,Lombe
+14,Malanje,114,Cacuso,368,Pungo-Andongo
+14,Malanje,115,Calandula,369,Calandula
+14,Malanje,115,Calandula,370,Kateco-Kangola
+14,Malanje,115,Calandula,371,Kinge
+14,Malanje,115,Calandula,372,Kota
+14,Malanje,115,Calandula,373,Kuale
+14,Malanje,116,Cambundi-Catembo,349,Quitapa
+14,Malanje,116,Cambundi-Catembo,374,Dumba Kabango
+14,Malanje,116,Cambundi-Catembo,375,Kambundi-Katembo
+14,Malanje,116,Cambundi-Catembo,376,Tala-Mungongo
+14,Malanje,117,Cangandala,377,Cangandala
+14,Malanje,117,Cangandala,378,Caribo
+14,Malanje,117,Cangandala,379,Kulamagia
+14,Malanje,117,Cangandala,380,Mbembo
+14,Malanje,118,Cahombo,381,Bange-Angola
+14,Malanje,118,Cahombo,382,Kahombo
+14,Malanje,118,Cahombo,383,Kambo
+14,Malanje,118,Cahombo,384,Mikanda
+14,Malanje,119,Kiuaba-N'Zoji (Cuaba Nzogo),385,Kiwaba-Ngozi
+14,Malanje,119,Kiuaba-N'Zoji (Cuaba Nzogo),386,Mufuma
+14,Malanje,120,Cunda-dia-Baze,387,Kunda-Dia-Baze
+14,Malanje,120,Cunda-dia-Baze,388,Lemba
+14,Malanje,120,Cunda-dia-Baze,389,Milando
+14,Malanje,121,Luquembo,390,Dombo
+14,Malanje,121,Luquembo,391,Kapunda
+14,Malanje,121,Luquembo,392,Kimbango
+14,Malanje,121,Luquembo,393,Luquembo
+14,Malanje,122,Malanje,394,Cambaxe
+14,Malanje,122,Malanje,395,Cambondo
+14,Malanje,122,Malanje,396,Kangando
+14,Malanje,122,Malanje,397,Kimbamba
+14,Malanje,122,Malanje,398,Malanje
+14,Malanje,122,Malanje,399,Ngola-Luige
+14,Malanje,123,Marimba,400,Kabombo
+14,Malanje,123,Marimba,401,Marimba
+14,Malanje,123,Marimba,402,Tembo-Aluma
+14,Malanje,124,Massango,403,Kihuhu
+14,Malanje,124,Massango,404,Kinguengue
+14,Malanje,124,Massango,405,Massango
+14,Malanje,125,Mucari,406,Catala
+14,Malanje,125,Mucari,407,Caxinga
+14,Malanje,125,Mucari,408,Mucari
+14,Malanje,125,Mucari,409,Muquixi
+14,Malanje,126,Quela,410,Moma
+14,Malanje,126,Quela,411,Quela
+14,Malanje,126,Quela,412,Xandele
+14,Malanje,127,Quirima,413,Quirima
+14,Malanje,127,Quirima,414,Sautari
+15,Moxico,128,Alto Zambeze,415,Alto Zambeze
+15,Moxico,128,Alto Zambeze,416,Caianda
+15,Moxico,128,Alto Zambeze,417,Calunda
+15,Moxico,128,Alto Zambeze,418,Kaquengue
+15,Moxico,128,Alto Zambeze,419,Kavungo
+15,Moxico,128,Alto Zambeze,420,Lovua
+15,Moxico,128,Alto Zambeze,421,Lumbala
+15,Moxico,128,Alto Zambeze,422,Mucondo
+15,Moxico,129,Camanongue,423,Camanongue
+15,Moxico,130,Cameia (Lumeje),424,Kameia
+15,Moxico,131,Léua,425,Leua
+15,Moxico,131,Léua,426,Liangongo
+15,Moxico,132,Luau,427,Luau
+15,Moxico,133,Luacano,428,Lago-Dilolo
+15,Moxico,133,Luacano,429,Luacano
+15,Moxico,134,Luchazes,430,Cangombe
+15,Moxico,134,Luchazes,431,Cassamba
+15,Moxico,134,Luchazes,432,Luchazes
+15,Moxico,134,Luchazes,433,Muie
+15,Moxico,134,Luchazes,434,Tempue
+15,Moxico,135,Bundas (Lumbala-Nguimbo),435,Chiume
+15,Moxico,135,Bundas (Lumbala-Nguimbo),436,Lumbala-Nguimbo
+15,Moxico,135,Bundas (Lumbala-Nguimbo),437,Lutembo
+15,Moxico,135,Bundas (Lumbala-Nguimbo),438,Luvuei
+15,Moxico,135,Bundas (Lumbala-Nguimbo),439,Mussuma
+15,Moxico,135,Bundas (Lumbala-Nguimbo),440,Ninda
+15,Moxico,135,Bundas (Lumbala-Nguimbo),441,Sessa
+15,Moxico,136,Luena,442,Kangumbe
+15,Moxico,136,Luena,443,Lucusse
+15,Moxico,136,Luena,444,Luena
+15,Moxico,136,Luena,445,Lutuai
+16,Namibe,137,Bibala,446,Bibala
+16,Namibe,137,Bibala,447,Caitou
+16,Namibe,137,Bibala,448,Lola
+16,Namibe,137,Bibala,449,Munhino
+16,Namibe,138,Camucuio,450,Camacuio
+16,Namibe,138,Camucuio,451,Chingo
+16,Namibe,138,Camucuio,452,Chinquite
+16,Namibe,139,Namibe,453,Bentiaba
+16,Namibe,139,Namibe,454,Lucira
+16,Namibe,139,Namibe,455,Namibe
+16,Namibe,140,Tômbwa (Porto Alexandre),456,Baia dos Tigres
+16,Namibe,140,Tômbwa (Porto Alexandre),457,Tombua
+16,Namibe,141,Virei,458,Cahinde
+16,Namibe,141,Virei,459,Virei
+17,Uíge,142,Cangola (Alto Cauale),460,Bengo
+17,Uíge,142,Cangola (Alto Cauale),461,Caiongo
+17,Uíge,142,Cangola (Alto Cauale),462,Kangola
+17,Uíge,143,Ambuíla,463,Kimpetelu
+17,Uíge,143,Ambuíla,464,Sede Mantoyo
+17,Uíge,144,Bembe,465,Bembe
+17,Uíge,144,Bembe,466,Lucunga
+17,Uíge,144,Bembe,467,Mabaia
+17,Uíge,145,Buengas,468,Buengas
+17,Uíge,145,Buengas,469,Camboso
+17,Uíge,145,Buengas,470,Quimbianda
+17,Uíge,146,Bungo,471,Bungo
+17,Uíge,147,Damba,472,Damba
+17,Uíge,147,Damba,473,Lemboa
+17,Uíge,147,Damba,474,N'soso
+17,Uíge,147,Damba,475,Nkama-Ntambu
+17,Uíge,147,Damba,476,Nkuso
+17,Uíge,148,Maquela do Zombo,477,Beu
+17,Uíge,148,Maquela do Zombo,478,Kibocolu
+17,Uíge,148,Maquela do Zombo,479,Kuilu Futa
+17,Uíge,148,Maquela do Zombo,480,Maquela do Zombo
+17,Uíge,148,Maquela do Zombo,481,Sakandika
+17,Uíge,149,Milunga,482,Macocola
+17,Uíge,149,Milunga,483,Macolo
+17,Uíge,149,Milunga,484,Massau
+17,Uíge,149,Milunga,485,Milunga
+17,Uíge,150,Mucaba,486,Quinzala
+17,Uíge,150,Mucaba,487,Uando
+17,Uíge,151,Negage,488,Dimuca
+17,Uíge,151,Negage,489,Kisseke
+17,Uíge,151,Negage,490,Negage
+17,Uíge,152,Puri,491,Puri
+17,Uíge,153,Quimbele,492,Alto-Zaza
+17,Uíge,153,Quimbele,493,Cuango
+17,Uíge,153,Quimbele,494,Icoca
+17,Uíge,153,Quimbele,495,Quimbele
+17,Uíge,154,Quitexe,496,Cambambe
+17,Uíge,154,Quitexe,497,Quifuafua
+17,Uíge,154,Quitexe,498,Quitende
+17,Uíge,154,Quitexe,499,Quitexe
+17,Uíge,155,Sanza Pombo,500,Alfandega
+17,Uíge,155,Sanza Pombo,501,Cuilo Pombo
+17,Uíge,155,Sanza Pombo,502,Sanza Pombo
+17,Uíge,155,Sanza Pombo,503,Uamba
+17,Uíge,156,Songo,504,Kinvuenga
+17,Uíge,156,Songo,505,Songo
+17,Uíge,157,Uíge,506,Uige
+18,Zaire,158,Cuimba,507,Buela
+18,Zaire,158,Cuimba,508,Serra da Kanda
+18,Zaire,159,Mbanza Congo,509,Kiende
+18,Zaire,159,Mbanza Congo,510,Luvo
+18,Zaire,159,Mbanza Congo,511,Madimba
+18,Zaire,159,Mbanza Congo,512,Mbanza Congo
+18,Zaire,160,N'Zeto,513,Kindege
+18,Zaire,160,N'Zeto,514,Musserra
+18,Zaire,160,N'Zeto,515,Nzeto
+18,Zaire,160,N'Zeto,516,Quibala Norte
+18,Zaire,161,Nóqui,517,Lufico
+18,Zaire,161,Nóqui,518,Lulendo
+18,Zaire,161,Nóqui,519,Noqui
+18,Zaire,162,Soyo,520,Kelo
+18,Zaire,162,Soyo,521,Pedra do Feitico
+18,Zaire,162,Soyo,522,Soyo
+18,Zaire,162,Soyo,523,Sumba
+18,Zaire,163,Tomboco,524,Kingombe
+18,Zaire,163,Tomboco,525,Kinzau
+18,Zaire,163,Tomboco,526,Quiximba
+18,Zaire,163,Tomboco,527,Tomboco

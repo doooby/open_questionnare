@@ -9,7 +9,7 @@ module OqWebPlugin
     end
 
     initializer 'oq_web_plugin' do
-      OqWeb::QUESTIONNAIRE_SINGLETON_TYPE = 'DummyQuestionnaire'
+      OqWeb::QUESTIONNAIRE_SINGLETON_TYPE = 'EmaForm'
     end
 
   end

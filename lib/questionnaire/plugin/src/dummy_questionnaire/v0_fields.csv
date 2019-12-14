@@ -1,8 +1,0 @@
-name,group,type,options
-name,one,string
-self,one,integer,select=[0-5]&optional
-mood,one,string,select=[Sad:Mad:Dad:Glad]&noTranslateOptions
-meaning,one,integer,,
-long,one,string,control=text-long&optional
-number,one,number,optional
-filter,one,string,select&filteredSelect&noTranslateOptions&optional
