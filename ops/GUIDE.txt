@@ -1,0 +1,84 @@
+## Overview
+
+[not written yet]
+
+## How to
+
+### 1. establish connection
+
+* connect as root
+* create new user for connecting and add that to sudoers
+* create and download cert
+* use that cert to establish connection
+* (throw away the original root connection rsa)
+
+### 2. system provision
+Set these variables:
+`name=oquest`
+`stack_path=/opt/$name`
+
+Upload the script to provision the system (from /ops/lib/provision_host.sh) to some place on the server, like /tmp/provision_host.sh. Then run this script as root.
+`sudo bash /tmp/provision_host.sh $name`
+This sets up all necessary thing to hold the platform on this system:
+* creates /opt/oquest as the stack path and builds its structure
+* creates code repository at /opt/oquest/app.git
+* sets a git hook to call new version builder expected at /opt/oquest/build
+
+Add the user used to connect to the group. This allows the user push the code to the repository and thus trigger the deploy.
+`sudo usermod -a -G $name $(whoami)`
+
+### 3. install app
+
+#### 3.a push code to the server
+First step is to push your code to the server. Do this locally from checked out web application's code. To do that, add git remote repository. i.e. something like this:
+`git add remote production <server>:/opt/oquest/app.git`
+`git push production master`
+
+#### 3.b build base images
+Checkout the code to a working directory
+`sudo git clone --single-branch --branch master $stack_path/app.git $stack_path/lib/app`
+
+Actually build the base images
+`sudo su -c "cd $stack_path/lib/app && bash ops/lib/build_base.sh"`
+
+#### 3.c import DB or create new
+The app needs it's database, which is postgresql. We keep it's data at /opt/oquest/var/pg_data. So you need to run the service and import your existing data or create new DB. We use app image also as it has tooling to work with the DB. Like rails itself, pg_restore, psql, etc.
+
+Build the app image:
+`sudo su -c "cd $stack_path/lib/app && bash ops/lib/build_app.sh"`
+
+If you're importing DB, you can do something like `bin/compose run --rm app <import-db>`. That spins up the Postgresql server and runs your import-db script on the app image.
+
+To create new empty db use the same technique using the app image:
+`sudo su -c "cd $stack_path/lib/app && ops/bin/compose run --rm app bin/rails db:create"`
+
+#### 3.d HTTPS - installing SSL certificate
+Now we have functional web app, but we need to secure the platform by using HTTPS - secured version of web. To achieve that we need to have a SSL certificate, here we use Letsencrypt, because it's free, quite common and have a way how to keep certificates valid in long terms.
+
+All that is enclosed in the next script. You need to have your domain first, have it pointing to the server. Then we request new letsencrypt certificate using base image of nginx and save the data to the /opt/oquest/var/letsencrypt.
+`domain=<your.domain.org>`
+`sudo su -c "cd $stack_path/lib/app && bash ops/lib/install_https.sh $domain"`
+
+### 4. Build the App
+All should be now ready and you should test its running. The first build can be done by another push to the repo - in that case you need the deploy script linked, skip to section 5. By It's better to try everything manually for the first build:
+`sudo $stack_path/lib/app/ops/bin/build`
+
+You should now have running app.
+* check all docker images are running `sudo docker ps`
+* try access the domain from browser
+
+### 5. enable push to deploy
+This connects all the pieces, as after this, a `git push` the repository triggers the deploy script automatically. This allows to release changes of the app to the created platform.
+`sudo ln -s $stack_path/lib/app/ops/bin/deploy $stack_path/build`
+
+## Notes & Troubleshooting
+
+#### 1. SLL certificate creation
+on success it prints out this:
+```
+IMPORTANT NOTES:
+ - Unable to install the certificate
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/<your.domain.org>/fullchain.pem
+```
+Do not worry about that "unable to install". Important is only that the second line tells you that the certificate has been created.

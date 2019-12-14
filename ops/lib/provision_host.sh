@@ -1,12 +1,4 @@
-name=$1
-
-if [ -z $name ]; then
-  echo "Usage: <script> <name>"
-  echo "First argument passed is a name of the stack."
-  echo "That is used for group name and directory name in /opt."
-  exit 1
-fi
-
+name=oquest
 
 if [ $(whoami) != "root" ]; then
   echo "this has to be run as root (sudo?)"
@@ -19,16 +11,20 @@ set -e
 groupadd $name
 
 stack_path=/opt/$name
-echo "--- creating stack path at $stack_path"
+echo "--- preparing stack path at $stack_path"
 # create stack path
-mkdir -p $stack_path
+mkdir $stack_path
+chown root:"$name" $stack_path
+chmod 750 $stack_path
+# lib is a dir for docker images building
+mkdir $stack_path/lib
+
 # create git repo
 repo_path=$stack_path/app.git
 git init --bare $repo_path
 chown root:"$name" -R $repo_path
 find $repo_path -type d | xargs chmod 0770
 find $repo_path -type f | xargs chmod 440
-echo
 
 echo "--- installing git hooks"
 # write build hook
@@ -47,17 +43,18 @@ do
 
     set -e
 
-    cd ../app
+    stack_path=$(realpath ..)
+    cd $stack_path/lib/app
     sudo git fetch origin
     sudo git reset --hard origin/master
     echo
 
-    sudo ../build_app
+    builder=$stack_path/build
+    [ -f $builder ] && sudo $builder
 
 done
 EOF
 chown root:"$name" $git_hook
 chmod 550 $git_hook
-echo
 
 echo "--- finished"

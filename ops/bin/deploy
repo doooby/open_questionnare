@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+
+app_path=$(pwd)
+stack_lib_path=$(realpath $app_path/..)
+
+echo "########### Building app"
+source ops/lib/build_app.sh
+echo
+
+echo "########### Building assets & nginx"
+docker run --rm -v $stack_lib_path/www:/var/www -v $stack_lib_path/assets:/app/public/assets app:build bash -c "cp -R public/* /var/www && bin/rails assets:precompile assets:clean"
+docker build -t nginx:build -f ops/docker/nginx.Dockerfile $stack_lib_path
+echo
+
+echo "########### Migrate and deploy"
+ops/bin/compose run --rm app bin/rails db:migrate
+ops/bin/compose up -d
+echo
