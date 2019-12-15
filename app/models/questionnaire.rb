@@ -59,9 +59,8 @@ class Questionnaire < ApplicationRecord
       Questionnaire.transaction{ list.each &:save! }
 
       index_only_version = singleton_type.current_version.rank
-      singleton_type.elastic.index_documents(
-          list.select{|f| f.data['version'] == index_only_version}
-      )
+      valid.select!{|f| f.data['version'] == index_only_version}
+      singleton_type.elastic.index_documents valid unless valid.empty?
     end
   end
 

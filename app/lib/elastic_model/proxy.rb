@@ -90,7 +90,7 @@ module ElasticModel
     end
 
     def query
-      Elastic::Query.new self
+      ElasticModel::Query.new self
     end
 
     def define_queries &block

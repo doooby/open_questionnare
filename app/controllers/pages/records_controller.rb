@@ -6,7 +6,16 @@ module Pages
     attr_reader :questionnaire
 
     def fetch_data
+      fetcher = "fetch_data_#{params[:fetch]}"
+      if questionnaire.respond_to? fetcher
+        paginator = -> (**opts) { pagination_params **opts }
+        data = questionnaire.send fetcher, params, paginator
+        render_ok data
 
+      else
+        render_fail 'no such fetcher'
+
+      end
     end
 
     def download_csv

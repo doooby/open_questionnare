@@ -1,4 +1,4 @@
-record_id,meta,string,
+id,meta,string,
 user,meta,string,
 created_at,meta,timestamp,
 updated_at,meta,timestamp,optional
