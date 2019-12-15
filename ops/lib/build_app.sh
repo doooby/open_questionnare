@@ -10,7 +10,8 @@ echo "building: production code app image"
 docker build -t app:production -f ops/docker/app.production.Dockerfile $lib_path
 
 echo "running: frontend build"
-docker run --rm -v $lib_path/www:/var/www -v $lib_path/node_modules:/app/app/frontend/node_modules app:production bash -c "cd app/frontend && yarn install && yarn build && cp -R ../../public/* /var/www"
+rm -rf $lib_path/www/*
+docker run --rm -v $lib_path/www:/var/www -v $lib_path/frontend/yarn.lock:/app/app/frontend/yarn.lock -v $lib_path/frontend/node_modules:/app/app/frontend/node_modules app:production bash -c "cd app/frontend && yarn install && yarn build && cp -R ../../public/* /var/www"
 
 echo "building: app"
 docker build -t app:build -f ops/docker/app.build.Dockerfile $lib_path
