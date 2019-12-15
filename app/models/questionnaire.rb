@@ -103,7 +103,8 @@ class Questionnaire < ApplicationRecord
     end
   end
 
-  def build_csv_tmpfile records_batches, version_klass=current_version
+  def self.build_csv_tmpfile records_batches, version_klass=nil
+    version_klass = singleton_type.current_version unless version_klass
     version_fields = version_klass.fields.values
 
     path = Rails.root.join "tmp/records_#{SecureRandom.uuid}.csv"

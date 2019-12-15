@@ -6,7 +6,7 @@ class Questionnaire
     OPT_OPTIONAL = 'optional'.freeze
     OPT_CONDITIONAL = 'conditional'.freeze
 
-    attr_reader :name, :group, :type, :type_name
+    attr_reader :name, :group, :type, :type_name, :options
 
     def initialize name, group, type_name, type, options
       @name = name.freeze
@@ -14,7 +14,8 @@ class Questionnaire
       @type_name = type_name.to_sym
       @type = type
 
-      apply_options parse_options(options)
+      @options = parse_options options
+      apply_common_options
     end
 
     def inspect
@@ -56,7 +57,7 @@ class Questionnaire
       end
     end
 
-    def apply_options options
+    def apply_common_options
       @can_be_nil = options.key?(OPT_OPTIONAL) || options.key?(OPT_CONDITIONAL)
     end
 

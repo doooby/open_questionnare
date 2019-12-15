@@ -55,6 +55,7 @@ class Questionnaire
         @rank = rank.to_i
         @fields = parse_version_fields!(rank, files_path).
             each_with_object({}){ |field, index| index[field.name] = field }
+        @fields.freeze
 
         questionnaire.versions[@rank] = self
       end
