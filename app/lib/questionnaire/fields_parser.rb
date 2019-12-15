@@ -18,6 +18,7 @@ class Questionnaire::FieldsParser
       ]
     end
 
+    fields.select!{|name, *_| name && name[0] != '#' }
     parser = new fields
     [ parser.process, parser ]
   end
