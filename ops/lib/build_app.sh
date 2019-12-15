@@ -11,7 +11,7 @@ docker build -t app:production -f ops/docker/app.production.Dockerfile $lib_path
 
 echo "running: frontend build"
 rm -rf $lib_path/www/*
-docker run --rm -v $lib_path/www:/var/www -v $lib_path/frontend:/var/frontend -v $lib_path/frontend/node_modules app:production bash -c "bash ops/lib/frontend/provision_yarn.sh 'yarn install && yarn build' && cp -R public/* /var/www"
+docker run --rm -v $lib_path/www:/var/www -v $lib_path/frontend:/var/frontend -v $lib_path/frontend/node_modules app:production bash -c "bash ops/lib/frontend/build.sh && cp -R public/* /var/www"
 
 echo "building: app"
 docker build -t app:build -f ops/docker/app.build.Dockerfile $lib_path

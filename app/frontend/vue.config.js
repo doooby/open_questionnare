@@ -27,7 +27,7 @@ module.exports = {
     },
 
     assetsDir: 'static/',
-    outputDir: '../public',
+    outputDir: path.resolve(APP_ROOT, 'public'),
 
     chainWebpack: config => {
 
