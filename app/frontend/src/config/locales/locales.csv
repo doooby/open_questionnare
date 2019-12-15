@@ -77,7 +77,7 @@ records.geography.coms,Communes,
 models.user.login,Login,Entrar
 models.user.password,Password,Senha
 models.user.role,Role,Função
-models.form.id,Record ID,ID do registro
+models.form.qid,Record ID,ID do registro
 models.form.uploaded_at,Uploaded at,Enviado em
 
 controls.select.selected,selected,selecionado

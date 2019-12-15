@@ -29,7 +29,7 @@ q.groups.ot.abbr,Others,Outro
 q.groups.ot.text,Others,Other Considerations,Outras considerações
 
 ### FIELDS
-q.attrs.form_id,Form ID,ID do formulário,
+q.attrs.id,Form ID,ID do formulário,
 q.attrs.user,User,Usuário,
 q.attrs.created_at,Created at,Criado em,
 q.attrs.updated_at,Updated at,Atualizado em,

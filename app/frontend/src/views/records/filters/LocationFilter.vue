@@ -37,8 +37,6 @@
     import { fromBaseFilter } from './filter_prototype';
     import SelectWithSearch from './inputs/SelectWithSearch';
 
-    const form_fields = FORM_DEFINITION;
-
     export default fromBaseFilter('location', {
         _EMA_filter_init_value () {
             return {
@@ -60,7 +58,7 @@
 
         computed: {
             labels () {
-                const locales = form_fields.locales[this.$i18n.locale].attrs;
+                const locales = FORM_DEFINITION.locales[this.$i18n.locale].q.attrs;
                 return {
                     province: locales['school_province'],
                     municipality: locales['school_municipality'],
@@ -118,7 +116,7 @@
             },
 
             searchProvinces (text='') {
-                const list = form_fields.getOptionsListFor(
+                const list = FORM_DEFINITION.fields.getOptionsListFor(
                     'school_province',
                     {},
                     text
@@ -127,7 +125,7 @@
             },
 
             searchMunicipalities (text='') {
-                const list = form_fields.getOptionsListFor(
+                const list = FORM_DEFINITION.fields.getOptionsListFor(
                     'school_municipality',
                     {
                         school_province: this.value.province
@@ -138,7 +136,7 @@
             },
 
             searchCommunes (text='') {
-                const list = form_fields.getOptionsListFor(
+                const list = FORM_DEFINITION.fields.getOptionsListFor(
                     'school_commune',
                     {
                         school_province: this.value.province,

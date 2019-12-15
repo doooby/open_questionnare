@@ -20,13 +20,12 @@
 
         computed: {
             disciplines () {
-                const form_fields = FORM_DEFINITION;
-                const list = form_fields.getOptionsListFor(
+                const list = FORM_DEFINITION.fields.getOptionsListFor(
                     'class_discipline',
                     {}
                 );
-                const locales = form_fields.locales[this.$i18n.locale]
-                    .options[list.name];
+                const locales = FORM_DEFINITION.locales[this.$i18n.locale]
+                    .q.opts[list.name];
                 const options = list.getKeys().map(key => ({
                     value: key,
                     text: locales[key]

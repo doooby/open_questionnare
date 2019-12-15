@@ -46,8 +46,9 @@ export const actions = {
 
     records_fetch: (function () {
         async function fetch (commit, query) {
+            query.fetch = 'table';
             const result = await apiPost(
-                `records/browse_fetch`,
+                `records/fetch_data`,
                 query
             );
 
@@ -73,8 +74,9 @@ export const actions = {
 
     overview_fetch: (function () {
         async function fetch (commit, query) {
+            query.fetch = 'overview';
             const result = await apiPost(
-                `records/aggregations_fetch`,
+                `records/fetch_data`,
                 query
             );
 

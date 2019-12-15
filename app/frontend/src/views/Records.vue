@@ -87,8 +87,6 @@
         }
     }));
 
-    const form_definition = FORM_DEFINITION;
-
     const skip_attrs = ['school_gps'];
     const date_attrs = [
         'uploaded_at',
@@ -115,7 +113,7 @@
             ...mapState([ 'view' ]),
 
             headers () {
-                const headers = form_definition
+                const headers = FORM_DEFINITION
                     .localizedFieldsHeaders(this.$i18n.locale)
                     .filter(({field}) => !skip_attrs.includes(field))
                     .map(({field, text}) => ({
@@ -126,7 +124,7 @@
                     }));
 
                 headers.splice(0, 0, ...(
-                    ['id', 'uploaded_at'].map(attr => ({
+                    ['qid', 'uploaded_at'].map(attr => ({
                         value: attr,
                         text: this.$i18n.t(`models.form.${attr}`),
                         align: 'left',
@@ -143,8 +141,8 @@
 
             formattedRecords () {
                 const locale = this.$i18n.locale;
-                const disciplines = form_definition
-                    .locales[locale].options.discipline;
+                const disciplines = FORM_DEFINITION
+                    .locales[locale].q.opts.class_discipline;
 
                 return this.view.records.map(record => {
                     record = {...record};
