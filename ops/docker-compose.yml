@@ -1,12 +1,6 @@
 version: '3'
 services:
 
-  pg:
-    image: postgres:12
-    restart: unless-stopped
-    volumes:
-      - ../../../../var/pg_data:/var/lib/postgresql/data
-
   app:
     image: app:build
     command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b '0.0.0.0'"
@@ -27,3 +21,19 @@ services:
     volumes:
       - ../../../../var/log:/var/log/nginx
       - ../../../../var/letsencrypt:/etc/letsencrypt
+
+  pg:
+    image: postgres:12
+    restart: unless-stopped
+    volumes:
+      - ../../../../var/pg_data:/var/lib/postgresql/data
+
+  es:
+    image: elasticsearch:7.5.0
+    restart: unless-stopped
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - ../../../../var/es_data:/usr/share/elasticsearch/data
+      -

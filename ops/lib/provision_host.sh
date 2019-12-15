@@ -18,6 +18,10 @@ chown root:"$name" $stack_path
 chmod 750 $stack_path
 # lib is a dir for docker images building
 mkdir $stack_path/lib
+libs=(bundle node_modules www assets)
+for lib in $libs; do
+  sudo mkdir $stack_path/lib/$lib
+done
 
 # create git repo
 repo_path=$stack_path/app.git

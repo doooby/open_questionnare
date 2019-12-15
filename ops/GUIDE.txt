@@ -43,7 +43,6 @@ Actually build the base images
 
 #### 3.c import DB or create new
 The app needs it's database, which is postgresql. We keep it's data at /opt/oquest/var/pg_data. So you need to run the service and import your existing data or create new DB. We use app image also as it has tooling to work with the DB. Like rails itself, pg_restore, psql, etc.
-
 Build the app image:
 `sudo su -c "cd $stack_path/lib/app && bash ops/lib/build_app.sh"`
 
