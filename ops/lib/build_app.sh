@@ -10,10 +10,10 @@ echo "building: production code app image"
 docker build -t app:production -f ops/docker/app.production.Dockerfile $lib_path
 
 echo "running: build rails assets"
-docker run --rm -v $lib_path/www:/var/www -v $lib_path/assets:/app/public/assets app:production bash -c "rm -rf /var/www/* && cp -R public/* /var/www && bin/rails assets:precompile assets:clean"
+docker run --rm -v $lib_path/www:/var/www -v $lib_path/assets:/app/public/assets app:production bash -c "rm -rf /var/www/* && bin/rails assets:precompile assets:clean && cp -R public/* /var/www"
 
 echo "running: frontend build"
-docker run --rm -v $lib_path/frontend:/var/frontend -v $lib_path/frontend/node_modules:/app/app/frontend/node_modules app:production bash -c "rm -rf /var/frontend/build && bash ops/lib/frontend/build.sh && cp -R public /var/frontend/build"
+docker run --rm -v $lib_path/frontend:/var/frontend -v $lib_path/frontend/node_modules:/app/app/frontend/node_modules app:production bash -c "rm -rf /var/frontend/build && bash ops/lib/frontend/build.sh && cp -R app/frontend/build /var/frontend/build"
 
 echo "building: app"
 docker build -t app:build -f ops/docker/app.build.Dockerfile $lib_path

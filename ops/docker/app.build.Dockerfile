@@ -1,4 +1,4 @@
 FROM app:production
 
-COPY assets/* public/assets/
+COPY www/* public/
 COPY frontend/build/* public/
