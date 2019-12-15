@@ -36,4 +36,7 @@ services:
       - discovery.type=single-node
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     volumes:
-      - ../../../var/es_data:/usr/share/elasticsearch/data
+      - es_data:/usr/share/elasticsearch/data
+
+volumes:
+  es_data:
