@@ -60,7 +60,7 @@ All that is enclosed in the next script. You need to have your domain first, hav
 
 ### 4. Build the App
 All should be now ready and you should test its running. The first build can be done by another push to the repo - in that case you need the deploy script linked, skip to section 5. By It's better to try everything manually for the first build:
-`sudo $stack_path/lib/app/ops/bin/build`
+`sudo $stack_path/lib/app/ops/bin/deploy`
 
 You should now have running app.
 * check all docker images are running `sudo docker ps`
