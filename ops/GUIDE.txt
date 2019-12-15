@@ -26,6 +26,7 @@ This sets up all necessary thing to hold the platform on this system:
 
 Add the user used to connect to the group. This allows the user push the code to the repository and thus trigger the deploy.
 `sudo usermod -a -G $name $(whoami)`
+For that to actually take effect, you need to reconnect to the server. Don't forget set the variables again.
 
 ### 3. install app
 
@@ -60,7 +61,7 @@ All that is enclosed in the next script. You need to have your domain first, hav
 
 ### 4. Build the App
 All should be now ready and you should test its running. The first build can be done by another push to the repo - in that case you need the deploy script linked, skip to section 5. By It's better to try everything manually for the first build:
-`sudo $stack_path/lib/app/ops/bin/deploy`
+sudo su -c "cd $stack_path/lib/app && ops/bin/deploy"
 
 You should now have running app.
 * check all docker images are running `sudo docker ps`

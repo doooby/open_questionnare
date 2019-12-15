@@ -48,7 +48,10 @@ do
     set -e
 
     stack_path=$(realpath ..)
-    cd $stack_path/lib/app
+    app_path=$stack_path/lib/app
+
+    [ ! -d $app_path ] && exit 0;
+    cd $app_path
     sudo git fetch origin
     sudo git reset --hard origin/master
     echo
