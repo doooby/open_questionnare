@@ -1,3 +1,3 @@
 FROM app:production
 
-COPY www/* public/
+COPY www/index.html public/
