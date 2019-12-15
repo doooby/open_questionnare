@@ -1,0 +1,85 @@
+key,en,pt
+
+language,English,Português
+
+toolbar.logged_in,logged in as %{login},logado como %{login}
+toolbar.logout,Logout,Sair
+toolbar.login,Login,Entrar
+toolbar.language,Language,Língua
+toolbar.language_modal,Choose Language,Escolha o seu idioma
+toolbar.pages.records,Records,Registros
+toolbar.pages.overview,Overview,
+toolbar.pages.users,Users,Usuários
+
+processing.server_down,Server is not reachable.,O servidor não está acessível.
+processing.server_fail,An error occurred on the server.,Ocorreu um erro no servidor.
+processing.loading,Loading Data.,Carregando dados.
+processing.no_data,No data.,Sem dados.
+
+actions.create,Create,Crio
+actions.set,Set,Conjunto
+actions.cancel,Cancel,Cancelar
+actions.destroy,Delete,Excluir
+actions.close,Close,Perto
+
+views.records.filters.header,Data Filters,
+views.records.outputs.header,Output,Saída
+views.records.filters.add,Add Filter,Adicionar filtro
+views.records.filters.apply,Apply,
+views.records.filters.export,Export To CSV,
+views.records.filters.between,between,entre
+views.records.filter.collector.label,Collector,Colecionador/a
+views.records.filter.discipline.label,Discipline,Disciplina
+views.records.filter.finalized.label,Finalized On,Finalizado em
+views.records.filter.uploaded.label,Uploaded On,Carregado em
+views.records.filter.school.label,School,Escola
+views.records.filter.teacher.label,Teacher,Professor
+views.records.filter.supervisor.label,Supervisor,Supervisor
+views.records.filter.location.label,Location,Localização
+
+views.overview.numbers.total,Total Score,Pontuação total
+views.overview.map.listing,Score per Region,
+views.overview.controls.sort.caption,Sort Order,Ordem de classificação
+views.overview.controls.sort.desc,Best on Top,Melhor no topo
+views.overview.controls.sort.asc,Worst on Top,Pior no topo
+views.overview.controls.group_by.caption,Group By,
+views.overview.controls.indicators.caption,Indicators,
+views.overview.controls.indicators.change,Change,
+views.overview.controls.indicators.modal.title,Select Indicators,
+views.overview.controls.regions.caption,Regions,
+
+views.users.toolbar.sync,Reload,recarregar
+views.users.toolbar.new,New user,Novo usuário
+views.users.modals.new.headline,Creating New User,Criando Novo Usuário
+views.users.modals.pass.headline,Update Password for,Atualizar senha para
+views.users.modals.del.text,Are you sure you want to delete %{user} ?,Tem certeza de que deseja excluir %{user}?
+views.users.modals.del.notice,This action is irreversible.,Essa ação é irreversível.
+views.users.labels.disabled,Access Disabled,Acesso desativado
+views.users.labels.last_authn,Last login,Último login
+views.users.labels.change_pass,Change Password,Mudar senha
+views.users.labels.disable,Disable access,Desativar acesso
+views.users.labels.enable,Enable access,Ativar acesso
+views.users.labels.delete_user,Delete,Excluir
+
+records.indicators.1,Bad,Mau
+records.indicators.2,Mediocre,Médiocre
+records.indicators.3,Sufficient,Suficiente
+records.indicators.4,Good,Bom
+records.indicators.5,Very Good,Muito Bom
+
+records.geography.prov,Province,
+records.geography.provs,Provinces,
+records.geography.mun,Municipality,
+records.geography.muns,Municipalities,
+records.geography.com,Commune,
+records.geography.coms,Communes,
+
+models.user.login,Login,Entrar
+models.user.password,Password,Senha
+models.user.role,Role,Função
+models.form.id,Record ID,ID do registro
+models.form.uploaded_at,Uploaded at,Enviado em
+
+controls.select.selected,selected,selecionado
+controls.select.select_all,Select All,Selecionar tudo
+controls.select.selected_all,selected all,selecionar tudo

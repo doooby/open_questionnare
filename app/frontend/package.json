@@ -1,0 +1,54 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@kazupon/vue-i18n-loader": "^0.3.0",
+    "@mdi/font": "^3.4.93",
+    "@vue/cli": "^3.4.0",
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "@webcomponents/webcomponentsjs": "^2.2.9",
+    "css-loader": "^2.1.0",
+    "csv-loader": "^3.0.2",
+    "dayjs": "^1.8.14",
+    "extract-loader": "^3.1.0",
+    "file-saver": "^2.0.2",
+    "lodash": "^4.17.11",
+    "ol": "^5.3.2",
+    "papaparse": "^4.6.3",
+    "query-string": "^6.5.0",
+    "raw-loader": "^3.1.0",
+    "sass": "^1.22.9",
+    "sass-loader": "^7.2.0",
+    "stats-webpack-plugin": "^0.7.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "terser-webpack-plugin": "^1.2.2",
+    "uuid": "^3.3.2",
+    "vue": "^2.5.22",
+    "vue-cli-plugin-i18n": "^0.5.1",
+    "vue-i18n": "^8.0.0",
+    "vue-router": "^3.0.1",
+    "vue-template-compiler": "^2.5.21",
+    "vuetify": "^1.4.4",
+    "vuex": "^3.0.1"
+  },
+  "resolutions": {
+    "terser": "3.14.1"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
