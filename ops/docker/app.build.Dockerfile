@@ -1,3 +1,7 @@
-FROM app:production
+FROM app:base
 
-COPY assets public/assets
+ENV RAILS_ENV=production
+
+COPY app .
+
+COPY bundle /usr/local/bundle
