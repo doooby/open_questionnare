@@ -26,9 +26,9 @@ Rails.application.routes.draw do
       post :save_language
     end
 
-    # controller.call 'pages/users', 'users' do
+    controller 'pages/users', 'users' do
     #   get '/', action: 'index'
-    #   get 'collectors'
+      get 'collectors'
     #   post '/', action: 'create'
     #   scope '/:id' do
     #     post :change_password
@@ -36,9 +36,9 @@ Rails.application.routes.draw do
     #     post :enable
     #     post :delete
     #   end
-    # end
+    end
 
-    controller.call 'pages/records', 'records' do
+    controller 'pages/records', 'records' do
       post :fetch_data
     end
 

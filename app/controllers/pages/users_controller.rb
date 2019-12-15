@@ -11,16 +11,16 @@ module Pages
     #
     #   render_ok users: data
     # end
-    #
-    # def collectors
-    #   data = User.
-    #       where(role: 'collector').
-    #       order(:login).
-    #       map{|u| {id: u.id, name: u.login}}
-    #
-    #   render_ok users: data
-    # end
-    #
+
+    def collectors
+      data = User.
+          all.
+          order(:name).
+          map{|u| {id: u.id, name: u.name}}
+
+      render_ok users: data
+    end
+
     # def create
     #   user = User.create create_params
     #

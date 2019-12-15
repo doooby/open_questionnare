@@ -50,7 +50,6 @@ module Pages
     def user_metadata
       {
           login: current_user.login,
-          admin: current_user.role == 'admin',
           language: current_user.language
       }
     end
