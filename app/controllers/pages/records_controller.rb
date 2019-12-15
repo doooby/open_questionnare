@@ -20,7 +20,7 @@ module Pages
 
     def download_csv
       records = fetch_records 1, 1000
-      file = questionnaire.build_csv_tmpfile [records]
+      file = Questionnaire.build_csv_tmpfile [records]
 
       time_stamp = Time.zone.now.strftime '%y-%m-%d_%H-%M'
       send_data file,
