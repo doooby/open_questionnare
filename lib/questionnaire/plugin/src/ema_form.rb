@@ -4,8 +4,8 @@ class EmaForm < Questionnaire
 
   def self.fetch_data_table params, paginator
     pagination = paginator.(per_page_options: [10, 50])
-    records = elastic.queries.filtered_records params
-    records = records.paginate(*pagination).fetch_records
+    query = elastic.queries.filtered_records params
+    records = query.paginate(*pagination).fetch_records
 
     h = Questionnaire::FieldsHelpers
     items = records.map do |r|
@@ -17,6 +17,25 @@ class EmaForm < Questionnaire
     {
         items: items,
         total: records.total_count
+    }
+  end
+
+  def self.fetch_data_overview params, _
+    query = elastic.queries.filtered_records params
+    query.paginate 1, 1000
+
+    index = current_version.new_indicators_aggregation
+
+    loop do
+      records = query.fetch_records
+      index.add_mixed records
+
+      break unless records.more?
+      query.next_page!
+    end
+
+    {
+        data: index.build_result
     }
   end
 

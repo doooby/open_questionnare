@@ -59,7 +59,7 @@
             },
 
             tBase () {
-                return FORM_DEFINITION.locales[this.$i18n.locale];
+                return FORM_DEFINITION.locales[this.$i18n.locale].q;
             },
 
             totalData () {

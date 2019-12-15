@@ -68,6 +68,8 @@
     import ColorScale from './overview/ColorScale';
     import AggregationsMap from './overview/AggregationsMap';
 
+    import geography from 'PLUGIN_SRC/geography/geography';
+
     setDefaultStateSetter('overview', current_state => ({
         data_filters: filtersDefaultState(current_state),
 
@@ -126,14 +128,13 @@
 
                 loadedData (state) {
                     const raw_data = state.view.data;
-                    const { getRegion } = FORM_DEFINITION.geography;
 
                     let schema = null, communes = [];
                     if (raw_data) {
                         schema = new IndicatorsGroupingSchema(raw_data.schema);
                         communes = Object.keys(raw_data.indicators)
                             .map(reg_id => ({
-                                region: getRegion(reg_id),
+                                region: geography.getRegion(reg_id),
                                 indicators: raw_data.indicators[reg_id]
                             }))
                     }
@@ -148,7 +149,6 @@
             dataGroupedByRegionLevel () {
                 const { group_by } = this.controls;
                 const { schema, communes } = this.loadedData;
-                const { getRegion } = FORM_DEFINITION.geography;
 
                 let indicators = {}, regions = [];
 
@@ -171,7 +171,7 @@
                     );
 
                     regions = Object.keys(indicators)
-                        .map(reg_id => getRegion(reg_id));
+                        .map(reg_id => geography.getRegion(reg_id));
                 }
 
                 return {
