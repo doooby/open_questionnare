@@ -52,6 +52,9 @@ If you're importing DB, you can do something like `bin/compose run --rm app <imp
 To create new empty db use the same technique using the app image:
 `sudo su -c "cd $stack_path/lib/app && ops/bin/compose run --rm app bin/rails db:create"`
 
+Also needed is to create Elasticsearch index:
+sudo su -c "cd $stack_path/lib/app && ops/bin/compose run --rm app bin/rails records:elastic_reindex"
+
 #### 3.d HTTPS - installing SSL certificate
 Now we have functional web app, but we need to secure the platform by using HTTPS - secured version of web. To achieve that we need to have a SSL certificate, here we use Letsencrypt, because it's free, quite common and have a way how to keep certificates valid in long terms.
 
