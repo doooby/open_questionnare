@@ -1,54 +1,32 @@
 module Pages
   class RecordsController < Pages::BaseController
 
-    before_action :set_prescript
+    before_action :set_questionnaire
 
-    attr_reader :prescript
+    attr_reader :questionnaire
 
-    # def browse_fetch
-    #   forms = fetch_forms *pagination_params(per_page_options: [10, 50])
-    #   items = prescript.data_processors.run :table_data, forms, prescript.current_version
-    #   render_ok items: items, total: forms.total_count
-    # end
+    def fetch_data
 
-    # def aggregations_fetch
-    #   result = prescript.data_processors.run 'all_indicators',
-    #       query: prescript.elastic.queries.filtered_records(params),
-    #       pagination: pagination_params,
-    #       version: prescript.current_version
-    #   render_ok data: result
-    # end
+    end
 
-    # def map_tab_search
-    #   forms = fetch_forms 1, 100
-    #   items = prescript.data_processors.run :map_data, forms, prescript.current_version
-    #   render_ok items: items
-    # end
+    def download_csv
+      records = fetch_records 1, 1000
+      file = questionnaire.build_csv_tmpfile [records]
 
-    # def download_csv
-    #   forms = fetch_forms 1, 1000
-    #   file = prescript.build_csv_tmpfile [forms]
-    #
-    #   time_stamp = Time.zone.now.strftime '%y-%m-%d_%H-%M'
-    #   send_data file,
-    #       type: 'text/csv; charset=utf-8;',
-    #       filename: "ema_records_#{time_stamp}.csv"
-    # end
-
-    # def stats_tab_search
-    #   forms = fetch_forms 1, 1000
-    #   result = prescript.data_processors.run :indicators, forms, prescript.current_version
-    #   render_ok data: result
-    # end
+      time_stamp = Time.zone.now.strftime '%y-%m-%d_%H-%M'
+      send_data file,
+          type: 'text/csv; charset=utf-8;',
+          filename: "oq_records_#{time_stamp}.csv"
+    end
 
     private
 
-    def set_prescript
-      @prescript = Form.prescript
+    def set_questionnaire
+      @questionnaire = Questionnaire.singleton_type
     end
 
-    def fetch_forms page, per_page
-      q = prescript.elastic.queries.filtered_records params
+    def fetch_records page, per_page
+      q = questionnaire.elastic.queries.filtered_records params
       q.paginate(page, per_page).fetch_records
     end
 
