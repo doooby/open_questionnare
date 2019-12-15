@@ -19,11 +19,32 @@ Rails.application.routes.draw do
   ### JSON API for pages frontend application
   json_api 'app', as: 'pages' do
 
-    # controller 'pages/session', '' do
-    #   post :login
+    controller 'pages/session', '' do
+      post :touch
+      post :login
+      post :logout
+      post :save_language
+    end
+
+    # controller.call 'pages/users', 'users' do
+    #   get '/', action: 'index'
+    #   get 'collectors'
+    #   post '/', action: 'create'
+    #   scope '/:id' do
+    #     post :change_password
+    #     post :disable
+    #     post :enable
+    #     post :delete
+    #   end
     # end
 
+    controller.call 'pages/records', 'records' do
+      post :fetch_data
+    end
+
   end
+
+  post '/app/records/download_csv', controller: 'pages/records', action: 'download_csv'
 
   ### JSON API for android devices
   json_api 'android_api' do

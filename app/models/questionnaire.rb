@@ -104,35 +104,35 @@ class Questionnaire < ApplicationRecord
     end
   end
 
-  # def build_csv_tmpfile records_batches, version_klass=current_version
-  #   version_fields = version_klass.fields.values
-  #
-  #   path = Rails.root.join "tmp/records_#{SecureRandom.uuid}.csv"
-  #   csv = File.open path, 'w+'
-  #   File.unlink path
-  #
-  #   # headers
-  #   csv.puts([
-  #       'record_id',
-  #       'uploaded_at',
-  #       *version_fields.map(&:name)
-  #   ].join ',')
-  #
-  #   # data
-  #   time_to_csv = Form::Field::TYPES[:timestamp].to_csv
-  #   h = Form::FieldsHelpers
-  #   records_batches.each do |batch|
-  #     batch.each do |form|
-  #       csv.puts([
-  #           form.id,
-  #           time_to_csv.(h.time_to_js form.uploaded_at),
-  #           *version_fields.map(&(h.field_value_mapper form.data, :to_csv))
-  #       ].join ',')
-  #     end
-  #   end
-  #
-  #   csv.rewind
-  #   csv
-  # end
+  def build_csv_tmpfile records_batches, version_klass=current_version
+    version_fields = version_klass.fields.values
+
+    path = Rails.root.join "tmp/records_#{SecureRandom.uuid}.csv"
+    csv = File.open path, 'w+'
+    File.unlink path
+
+    # headers
+    csv.puts([
+        'id',
+        'uploaded_at',
+        *version_fields.map(&:name)
+    ].join ',')
+
+    # data
+    time_to_csv = Questionnaire::Field::TYPES[:timestamp][:to_csv]
+    h = Questionnaire::FieldsHelpers
+    records_batches.each do |batch|
+      batch.each do |form|
+        csv.puts([
+            form.id,
+            time_to_csv.(h.time_to_js form.uploaded_at),
+            *version_fields.map(&(h.field_value_mapper form.data, :to_csv))
+        ].join ',')
+      end
+    end
+
+    csv.rewind
+    csv
+  end
 
 end
