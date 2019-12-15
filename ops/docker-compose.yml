@@ -1,41 +1,42 @@
 version: '3'
 services:
 
-  pg:
-    image: postgres:12
-    restart: unless-stopped
-    volumes:
-      - ../../pg_data:/var/lib/postgresql/data
-
   app:
     image: app:build
     command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b '0.0.0.0'"
     restart: unless-stopped
     depends_on:
       - pg
-    expose:
-      - 3000
+      - es
+    ports:
+      - 3000:3000
     volumes:
-      - ../../var/log:/app/log
+      - ../../../var/log:/app/log
 
   nginx:
-    build:
-      context: ../..
-      dockerfile: ./app/ops/nginx.Dockerfile
-    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    image: nginx:build
     restart: unless-stopped
     ports:
       - 80:80
       - 443:443
     volumes:
-      - ../../var/log:/var/log/nginx
-      - ../../var/certbot/conf:/etc/letsencrypt
-      - ../../var/certbot/www:/var/www/certbot
+      - ../../../var/log:/var/log/nginx
+      - ../../../var/letsencrypt:/etc/letsencrypt
 
-  certbot:
-    image: certbot/certbot
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+  pg:
+    image: postgres:12
     restart: unless-stopped
     volumes:
-      - ../../var/certbot/conf:/etc/letsencrypt
-      - ../../var/certbot/www:/var/www/certbot
+      - ../../../var/pg_data:/var/lib/postgresql/data
+
+  es:
+    image: elasticsearch:7.5.0
+    restart: unless-stopped
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+
+volumes:
+  es_data:
