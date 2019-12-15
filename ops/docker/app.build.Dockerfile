@@ -1,7 +1,3 @@
-FROM app:base
+FROM app:production
 
-ENV RAILS_ENV=production
-
-COPY app .
-
-COPY bundle /usr/local/bundle
+COPY www/* public/
