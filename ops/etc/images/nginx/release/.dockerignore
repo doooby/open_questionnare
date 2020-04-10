@@ -1,0 +1,6 @@
+!src/ops/lib/nginx/release_entrypoint.sh
+!src/ops/lib/nginx/update_certificate.sh
+!src/ops/etc/nginx/app.conf
+!src/public
+!var/assets_backend
+!var/assets_frontend

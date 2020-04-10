@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+source src/ops/lib/libops.sh
+libops_print "release started" "title"
+bash src/ops/lib/build_release_images.sh
+
+libops_print "migrating DB" "title"
+bin/docker_compose run --rm app bin/rails db:migrate
+
+libops_print "restarting services" "title"
+bin/docker_compose up -d
+
+libops_print "release finished" "title"

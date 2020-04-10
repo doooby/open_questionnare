@@ -1,7 +1,13 @@
 set -e
 
-cp app/ops/lib/nginx/acme-challenge.conf /etc/nginx/conf.d/default.conf
+if [ -z $SERVER_NAMES ]; then
+  echo "SERVER_NAMES is empty"
+  echo "you need to set domain names in <stack_path>/ops_stack.conf"
+  exit 1
+fi
+
+cp ops/etc/nginx/acme-challenge.conf /etc/nginx/conf.d/default.conf
 nginx
 
-domain="$(cat /etc/letsencrypt/domain_name)"
-certbot --nginx --register-unsafely-without-email --agree-tos -d $domain
+domains="$(echo $SERVER_NAMES | tr ' ' "\n" | sed 's/.*/-d &/' | paste -sd ' ')"
+certbot --nginx --register-unsafely-without-email --agree-tos $domains

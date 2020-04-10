@@ -1,16 +1,24 @@
 #!/bin/bash
-
 set -e
 
-le_path=/etc/letsencrypt
-certs_path=/opt/certs
-domain="$(cat $le_path/domain_name)"
-
-if [ $1 == "renew" ]; then
-  certbot certonly --config-dir $le_path --agree-tos --domains $domain --register-unsafely-without-email --expand --noninteractive --webroot --webroot-path /var/www/certbot
+if [ -z $SERVER_NAMES ]; then
+  echo "SERVER_NAMES is empty"
+  echo "you need to set domain names in <stack_path>/ops_stack.conf"
+  exit 1
 fi
 
-if [ -f $le_path/live/$domain/privkey.pem ]; then
-  cp $le_path/live/$domain/privkey.pem $certs_path/
-  cp $le_path/live/$domain/fullchain.pem $certs_path/
+config_dir=/etc/letsencrypt
+certs_path=/opt/certs
+domains="$(echo $SERVER_NAMES | tr ' ' "\n" | sed 's/.*/-d &/' | paste -sd ' ')"
+
+if [ $1 == "renew" ]; then
+  certbot certonly --config-dir $config_dir \
+      --webroot --webroot-path /var/www/certbot \
+      $domains --register-unsafely-without-email --agree-tos \
+      --expand --noninteractive
+fi
+
+if [ -f $config_dir/live/$domain/privkey.pem ]; then
+  cp $config_dir/live/$domain/privkey.pem $certs_path/
+  cp $config_dir/live/$domain/fullchain.pem $certs_path/
 fi

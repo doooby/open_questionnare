@@ -1,26 +1,24 @@
-name=oquest
+set -e
+
+name=$1
+stack_path=/opt/$name
 
 if [ $(whoami) != "root" ]; then
   echo "this has to be run as root (sudo?)"
   exit 1
 fi
 
-set -e
-
 # create group
 groupadd $name
 
-stack_path=/opt/$name
 echo "--- preparing stack path at $stack_path"
 # create stack path
 mkdir $stack_path
 chown root:"$name" $stack_path
 chmod 750 $stack_path
-# lib is a dir for docker images building
-mkdir $stack_path/lib
 
 # create git repo
-repo_path=$stack_path/app.git
+repo_path=$stack_path/.git
 git init --bare $repo_path
 chown root:"$name" -R $repo_path
 find $repo_path -type d | xargs chmod 0770
@@ -33,6 +31,7 @@ cat > $git_hook <<"EOF"
 #!/bin/bash
 while read oldrev newrev refname
 do
+    set -e
 
     sudo -n true
     sudo_exit=$?
@@ -41,19 +40,17 @@ do
         exit 1
     fi
 
-    set -e
-
     stack_path=$(realpath ..)
-    app_path=$stack_path/lib/app
+    working_dir=$stack_path/src
 
-    [ ! -d $app_path ] && exit 0;
-    cd $app_path
+    [ ! -d $working_dir ] && exit 0;
+    cd $working_dir
     sudo git fetch origin
     sudo git reset --hard origin/master
     echo
 
-    builder=$stack_path/build
-    [ -f $builder ] && sudo $builder
+    release_hook=$stack_path/bin/deploy_release
+    [ -f $release_hook ] && sudo time $release_hook
 
 done
 EOF
