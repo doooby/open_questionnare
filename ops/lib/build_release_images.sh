@@ -3,8 +3,8 @@ set -e
 source src/ops/lib/libops.sh
 mnt_app="-v $stack_path/src:/app"
 mnt_gems="-v $stack_path/var/ruby_bundle:/usr/local/bundle"
-mnt_node_modules="-v $stack_path/var/node_modules:/app/node_modules"
-mnt_frontend="-v $stack_path/var/frontend:/app/frontend/build"
+mnt_node_modules="-v $stack_path/var/node_modules:/app/app/frontend/node_modules"
+mnt_frontend="-v $stack_path/var/frontend:/app/app/frontend/build"
 
 libops_print "release prerequisites" "title"
 
