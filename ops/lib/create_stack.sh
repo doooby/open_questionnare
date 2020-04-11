@@ -1,7 +1,7 @@
 set -e
 
-name=$1
-stack_path=/opt/$name
+stack_path=$(realpath $1)
+name=$(basename $stack_path)
 
 if [ $(whoami) != "root" ]; then
   echo "this has to be run as root (sudo?)"
@@ -14,9 +14,25 @@ groupadd $name
 echo "--- preparing stack path at $stack_path"
 # create stack path
 mkdir $stack_path
-chown root:"$name" $stack_path
-chmod 750 $stack_path
+cd $stack_path
+chown root:"$name" .
+chmod 750 .
 
+stack_conf=ops_stack.conf
+touch $stack_conf
+ln -s $stack_conf .env
+echo "STACK_NAME=$name" >> $stack_conf
+echo "STACK_PATH=$stack_path" >> $stack_conf
+echo "RAILS_ENV=production" >> $stack_conf
+
+mkdir var
+mkdir tmp
+chown root:"$name" tmp
+chmod 0770 tmp
+
+ln -s src/ops/bin bin
+
+echo "--- seting up git repository"
 # create git repo
 repo_path=$stack_path/.git
 git init --bare $repo_path
