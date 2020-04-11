@@ -47,13 +47,13 @@ on server: `sudo bash src/ops/lib/build_release_images.sh`
 #### 5. import DB or create new
 The app needs it's database, which is postgresql. We keep it's data at /opt/oquest/var/pg_data. So you need to run the service and import your existing data or create new DB. We use app image also as it has tooling to work with the DB. Like rails itself, pg_restore, psql, etc.
 
-If you're importing DB, you can do something like `bin/compose run --rm app <import-db-command>`. That spins up the Postgresql server and runs your import command on the app image.
+If you're importing DB, you can do something like `bin/docker_compose run --rm app <import-db-command>`. That spins up the Postgresql server and runs your import command on the app image.
 
 To create new demo db use the same technique using the app image:
-on server: `sudo bin/compose --rm app bin/rails db:create db:migrate db:seed`
+on server: `sudo bin/docker_compose run --rm app bin/rails db:create db:migrate db:seed`
 
 Also we need to create Elasticsearch index:
-on server: `sudo bin/compose --rm app bin/rails records:elastic_reindex`
+on server: `sudo bin/docker_compose run --rm app bin/rails records:elastic_reindex`
 
 #### 6. HTTPS - installing SSL certificate
 Now we should have a functional stack - but there's last piece missing. Nowadays there's no reason to use plain non-cyphered HTTP, as it is unsafe and also quite simple to do so. Our technique should work fully automated - as we use here LetsEncrypt's certificates with certbot to regularly renew the certificates. Anyway since the nginx configuration requires presence of the certs, the stack fails to boot up without it. To create the certs, we need first have a domain pointing to the server, where we've just set up our stack and set the name(s) in `ops_stack.conf` config and run `install_https.sh` script.

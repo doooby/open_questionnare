@@ -4,7 +4,7 @@ services:
   app:
     image: app:release
     env_file:
-      - .env
+      - "${STACK_PATH}/ops_stack.conf"
     command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b '0.0.0.0'"
     restart: unless-stopped
     depends_on:
@@ -19,7 +19,7 @@ services:
   nginx:
     image: nginx:release
     env_file:
-      - .env
+      - "${STACK_PATH}/ops_stack.conf"
     restart: unless-stopped
     ports:
       - 80:80

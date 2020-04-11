@@ -1,6 +1,5 @@
 .dockerignore - virtual, created on demand, acts as lock
 ops_stack.conf
-.env - symlink to ops_stack.conf (for docker)
 .git/ - repo
 src/ - git working dir
 bin/ - make it as symlink?

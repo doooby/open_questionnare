@@ -13,7 +13,7 @@ domains="$(echo $SERVER_NAMES | tr ' ' "\n" | sed 's/.*/-d &/' | paste -sd ' ')"
 
 if [ $1 == "renew" ]; then
   certbot certonly --config-dir $config_dir \
-      --webroot --webroot-path /var/www/certbot \
+      --webroot --webroot-path /var/www/acme_challenge \
       $domains --register-unsafely-without-email --agree-tos \
       --expand --noninteractive
 fi

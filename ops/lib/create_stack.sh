@@ -20,7 +20,6 @@ chmod 750 .
 
 stack_conf=ops_stack.conf
 touch $stack_conf
-ln -s $stack_conf .env
 echo "STACK_NAME=$name" >> $stack_conf
 echo "STACK_PATH=$stack_path" >> $stack_conf
 echo "RAILS_ENV=production" >> $stack_conf
