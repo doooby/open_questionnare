@@ -22,12 +22,12 @@ HEREDOC
 }
 
 function libops_print {
-  stamp="\033[35m[LIBOPS] [$(date +"%y%m%d %T")]\033[3"
   if [ $2 = "title" ]; then
-    echo "$stamp > $1"
+    msg="> $1"
   else
-    echo "$stamp     $1"
+    msg="    $1"
   fi
+  echo -e "\033[35m[LIBOPS] [$(date +"%y%m%d %T")]\033[3 $msg"
 }
 
 function libops_fail_with {
