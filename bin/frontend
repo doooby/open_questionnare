@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -e
+cd app/frontend
+
+function str_contains {
+    expr match "$1" "$2" > /dev/null
+    return $?
+}
+
+case "$1" in
+
+serve)
+    ./node_modules/.bin/vue-cli-service serve
+    ;;
+
+build)
+    opts="${@:2}"
+    args=""
+    str_contains "$opts" "--silent" && args="$args --silent"
+    str_contains "$opts" "--clean" && rm -rf build/*
+    ./node_modules/.bin/vue-cli-service build --no-clean $args
+    ;;
+
+*)
+    yarn "$@"
+    ;;
+esac

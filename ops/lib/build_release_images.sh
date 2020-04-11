@@ -17,7 +17,7 @@ libops_docker_run app:base \
 libops_print "updating node_modules"
 libops_docker_run app:base \
     "$mnt_app $mnt_node_modules" \
-    "yarn install --silent"
+    "bin/frontend install --silent"
 
 libops_print "compiling backend assets"
 libops_docker_run app:base \
@@ -27,7 +27,7 @@ libops_docker_run app:base \
 libops_print "compiling frontend"
 libops_docker_run app:base \
     "$mnt_app $mnt_node_modules $mnt_assets_frontend" \
-    "bin/frontend build"
+    "bin/frontend build --silent --clean"
 
 src/ops/bin/rebuild_image app release
 src/ops/bin/rebuild_image nginx release
