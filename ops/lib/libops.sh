@@ -22,7 +22,7 @@ HEREDOC
 }
 
 function libops_print {
-  if [ $2 = "title" ]; then
+  if [ "$2" = "title" ]; then
     msg="> $1"
   else
     msg="    $1"
