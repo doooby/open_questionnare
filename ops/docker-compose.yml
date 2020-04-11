@@ -4,7 +4,7 @@ services:
   app:
     image: app:release
     env_file:
-      - "${STACK_PATH}/ops_stack.conf"
+      - "${STACK_PATH}/.env"
     command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b '0.0.0.0'"
     restart: unless-stopped
     depends_on:
@@ -19,7 +19,7 @@ services:
   nginx:
     image: nginx:release
     env_file:
-      - "${STACK_PATH}/ops_stack.conf"
+      - "${STACK_PATH}/.env"
     restart: unless-stopped
     ports:
       - 80:80
@@ -30,6 +30,8 @@ services:
 
   pg:
     image: postgres:12
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
     restart: unless-stopped
     volumes:
       - "${STACK_PATH}/var/pg_data:/var/lib/postgresql/data"
@@ -41,4 +43,7 @@ services:
       - discovery.type=single-node
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     volumes:
-      - "${STACK_PATH}/var/es_data:/usr/share/elasticsearch/data"
+      - es_data:/usr/share/elasticsearch/data"
+
+volumes:
+  es_data:

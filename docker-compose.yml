@@ -18,4 +18,7 @@ services:
     ports:
       - 3012:9200
     volumes:
-      - ./var/es_data:/usr/share/elasticsearch/data"
+      - es_data:/usr/share/elasticsearch/data"
+
+volumes:
+  es_data:
