@@ -38,7 +38,7 @@ For that to actually take effect, you need to reconnect to the server.
 ### 4. init the stack using app code
 Next step is to push your code to the server. To do that, first add git remote repository and push to it. After that, checkout git working directory to finally have the app code on the server. From that we can continue to actually start running the services.
 
-on local:  `git add remote production <server>:<stack-path>/.git`
+on local:  `git remote add production <server>:<stack-path>/.git`
 on local:  `git push production master`
 on server: `sudo git clone --single-branch --branch master .git src`
 on server: `sudo bash src/ops/lib/build_base_images.sh`
