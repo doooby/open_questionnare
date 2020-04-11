@@ -1,4 +1,3 @@
 !src
 !var/ruby_bundle
-!var/assets_backend
-!var/assets_frontend/index.html
+!var/frontend/index.html
