@@ -16,5 +16,5 @@ sudo docker build -t $service:$stage -f $dockerfile .
 result=$?
 set -e
 
-rm -f $ignore_file
+sudo rm -f $dockerignore_file
 [ $result = 0 ] || exit 1

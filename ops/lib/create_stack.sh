@@ -65,7 +65,8 @@ do
     sudo git reset --hard origin/master
     echo
 
-    release_hook=$stack_path/bin/deploy_release
+    cd $stack_path
+    release_hook=bin/deploy_release
     [ -f $release_hook ] && sudo time $release_hook
 
 done

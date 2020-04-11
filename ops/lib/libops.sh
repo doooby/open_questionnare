@@ -22,7 +22,7 @@ HEREDOC
 }
 
 function libops_print {
-  stamp="[LIBOPS] [$(date +"%y%m%d %T")]"
+  stamp="\033[35m[LIBOPS] [$(date +"%y%m%d %T")]\033[3"
   if [ $2 = "title" ]; then
     echo "$stamp > $1"
   else
@@ -31,7 +31,7 @@ function libops_print {
 }
 
 function libops_fail_with {
-  echo -e "\033[31mLIBOPS FAIL:\033[0m" >> /dev/stderr
+  echo -e "\033[31m[LIBOPS] FAIL:\033[0m" >> /dev/stderr
   cat /dev/stdin >> /dev/stderr
   exit 1
 }
