@@ -3,3 +3,4 @@
 !var/frontend/index.html
 src/app/assets
 src/app/frontend
+!src/app/assets/config/manifest.js
