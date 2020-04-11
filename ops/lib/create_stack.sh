@@ -31,6 +31,7 @@ chown root:"$name" tmp
 chmod 0770 tmp
 
 ln -s src/ops/bin bin
+ln -s bin/deploy_release release_hook
 
 echo "--- seting up git repository"
 # create git repo
@@ -63,10 +64,11 @@ do
     cd $working_dir
     sudo git fetch origin
     sudo git reset --hard origin/master
+    sudo git clean -fdx
     echo
 
     cd $stack_path
-    release_hook=bin/deploy_release
+    release_hook=$stack_path/release_hook
     [ -f $release_hook ] && sudo time $release_hook
 
 done

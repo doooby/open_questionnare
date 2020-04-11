@@ -1,4 +1,5 @@
 !src
 !var/ruby_bundle
 !var/frontend/index.html
+src/app/assets
 src/app/frontend
