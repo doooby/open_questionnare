@@ -1,3 +1,4 @@
 !src
 !var/ruby_bundle
 !var/frontend/index.html
+src/app/frontend
