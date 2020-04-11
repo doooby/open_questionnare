@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+echo -e "\033[33mrequires sudo as it is docker command\033[0m"
+args="$@"
+[ -z "$args" ] && args=up
+sudo docker-compose -p oquest_dev $args

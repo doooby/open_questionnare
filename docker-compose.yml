@@ -1,0 +1,21 @@
+version: '3'
+services:
+
+  pg:
+    image: postgres:12
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - 3011:5432
+    volumes:
+      - ./var/pg_data:/var/lib/postgresql/data"
+
+  es:
+    image: elasticsearch:7.6.2
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - 3012:9200
+    volumes:
+      - ./var/es_data:/usr/share/elasticsearch/data"

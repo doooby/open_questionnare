@@ -49,8 +49,8 @@ The app needs it's database, which is postgresql. We keep it's data at /opt/oque
 
 If you're importing DB, you can do something like `bin/compose run --rm app <import-db-command>`. That spins up the Postgresql server and runs your import command on the app image.
 
-To create new empty db use the same technique using the app image:
-on server: `sudo bin/compose --rm app bin/rails db:create`
+To create new demo db use the same technique using the app image:
+on server: `sudo bin/compose --rm app bin/rails db:create db:migrate db:seed`
 
 Also we need to create Elasticsearch index:
 on server: `sudo bin/compose --rm app bin/rails records:elastic_reindex`

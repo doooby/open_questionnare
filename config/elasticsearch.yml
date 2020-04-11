@@ -1,5 +1,5 @@
 development:
-  host: "http://localhost:9200"
+  host: "http://localhost:3012"
 
 production:
   host: "http://es:9200"

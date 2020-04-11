@@ -3,12 +3,11 @@ require 'securerandom'
 
 class User < ApplicationRecord
 
-  # ROLES = %w[regular collector admin].freeze
+  belongs_to :project
 
-  validates :login, presence: true, uniqueness: true, length: {minimum: 6}
+  validates :login, presence: true, uniqueness: { scope: :project }, length: { minimum: 5 }
   validates_presence_of :name
   validate :validate_password
-  # validates :role, inclusion: {in: ROLES}
 
   attr_accessor :first_authn_ever
 
@@ -37,16 +36,6 @@ class User < ApplicationRecord
     tokens.delete token
     save!
   end
-
-  # def user_pages_data
-  #   {
-  #       id: id,
-  #       login: login,
-  #       role: role,
-  #       enabled: enabled,
-  #       last_authn: (Pages.format_date last_authn if last_authn)
-  #   }
-  # end
 
   private
 
