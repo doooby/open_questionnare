@@ -27,7 +27,7 @@ function libops_print {
   else
     msg="    $1"
   fi
-  echo -e "\033[35m[LIBOPS] [$(date +"%y%m%d %T")]\033[0m $msg"
+  echo -e "\033[36m[LIBOPS] [$(date +"%y%m%d %T")]\033[0m $msg"
 }
 
 function libops_fail_with {
@@ -43,6 +43,6 @@ function libops_docker_run {
   # $2 = docker opts
   # $3 = command
   cmd="sudo docker run --rm $2 --env-file $stack_path/ops_stack.conf $1 $3"
-  libops_print "exec: $cmd"
+  libops_print "exec: \033[35m${cmd}\033[0m"
   $cmd
 }

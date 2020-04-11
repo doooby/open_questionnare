@@ -12,7 +12,7 @@ libops_print "release prerequisites" "title"
 libops_print "updating ruby gems"
 libops_docker_run app:base \
     "$mnt_app $mnt_gems" \
-    "bundle install --without development test --clean --quiet"
+    "bundle install --without development test --quiet"
 
 libops_print "updating node_modules"
 libops_docker_run app:base \
