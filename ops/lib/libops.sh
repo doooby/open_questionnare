@@ -27,7 +27,7 @@ function libops_print {
   else
     msg="    $1"
   fi
-  echo -e "\033[35m[LIBOPS] [$(date +"%y%m%d %T")]\033[3 $msg"
+  echo -e "\033[35m[LIBOPS] [$(date +"%y%m%d %T")]\033[0m $msg"
 }
 
 function libops_fail_with {
