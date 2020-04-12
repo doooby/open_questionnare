@@ -1,15 +1,15 @@
 #!/bin/bash
 set -e
 
-if [ -z $SERVER_NAMES ]; then
-  echo "SERVER_NAMES is empty"
+if [ -z $HOST_NAMES ]; then
+  echo "HOST_NAMES is empty"
   echo "you need to set domain names in <stack_path>/ops_stack.conf"
   exit 1
 fi
 
 config_dir=/etc/letsencrypt
 certs_path=/opt/certs
-domains="$(echo $SERVER_NAMES | tr ' ' "\n" | sed 's/.*/-d &/' | paste -sd ' ')"
+domains="$(echo $HOST_NAMES | tr ' ' "\n" | sed 's/.*/-d &/' | paste -sd ' ')"
 
 if [ $1 == "renew" ]; then
   certbot certonly --config-dir $config_dir \

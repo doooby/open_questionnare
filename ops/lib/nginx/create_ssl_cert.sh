@@ -1,7 +1,7 @@
 set -e
 
-if [ -z $SERVER_NAMES ]; then
-  echo "SERVER_NAMES is empty"
+if [ -z $HOST_NAMES ]; then
+  echo "HOST_NAMES is empty"
   echo "you need to set domain names in <stack_path>/ops_stack.conf"
   exit 1
 fi
@@ -9,5 +9,5 @@ fi
 cp ops/etc/nginx/acme-challenge.conf /etc/nginx/conf.d/default.conf
 nginx
 
-domains="$(echo $SERVER_NAMES | tr ' ' "\n" | sed 's/.*/-d &/' | paste -sd ' ')"
+domains="$(echo $HOST_NAMES | tr ' ' "\n" | sed 's/.*/-d &/' | paste -sd ' ')"
 certbot --nginx --register-unsafely-without-email --agree-tos $domains
