@@ -18,7 +18,7 @@ cd $stack_path
 chown root:"$name" .
 chmod 750 .
 
-stack_conf=ops_stack.conf
+stack_conf=stack.conf
 touch $stack_conf
 ln -s $stack_conf .env
 echo "STACK_NAME=$name" >> $stack_conf

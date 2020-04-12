@@ -3,7 +3,7 @@ set -e
 
 if [ -z $HOST_NAMES ]; then
   echo "HOST_NAMES is empty"
-  echo "you need to set domain names in <stack_path>/ops_stack.conf"
+  echo "you need to set domain names in <stack_path>/stack.conf"
   exit 1
 fi
 

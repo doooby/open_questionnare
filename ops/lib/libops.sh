@@ -14,9 +14,9 @@ HEREDOC
 }
 
 function libops_assert_stack_path {
-  [ -f ops_stack.conf ] && return 0
+  [ -f stack.conf ] && return 0
   libops_fail_with << HEREDOC
-Wrong working directory - could not locate ops_stack.conf
+Wrong working directory - could not locate stack.conf
 pwd: $stack_path
 HEREDOC
 }
@@ -42,7 +42,7 @@ function libops_docker_run {
   # $1 = image
   # $2 = docker opts
   # $3 = command
-  cmd="sudo docker run --rm $2 --env-file $stack_path/ops_stack.conf $1 $3"
+  cmd="sudo docker run --rm $2 --env-file $stack_path/stack.conf $1 $3"
   libops_print "exec: \033[35m${cmd}\033[0m"
   $cmd
 }
