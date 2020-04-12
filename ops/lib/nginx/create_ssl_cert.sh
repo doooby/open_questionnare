@@ -9,5 +9,9 @@ fi
 cp ops/etc/nginx/acme-challenge.conf /etc/nginx/conf.d/default.conf
 nginx
 
-domains="$(echo $HOST_NAMES | tr ' ' "\n" | sed 's/.*/-d &/' | paste -sd ' ')"
-certbot --nginx --register-unsafely-without-email --agree-tos $domains
+function parse_domains {
+  echo "$1" | tr ' ' "\n" | sed '/^ *$/d; s/.*/-d &/' | paste -sd ' '
+}
+
+certbot --nginx --register-unsafely-without-email --agree-tos \
+    $(parse_domains "$HOST_NAMES")
