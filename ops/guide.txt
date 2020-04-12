@@ -72,7 +72,7 @@ Note that the same can be achieved just by pushing next commit to the repository
 
 ## Notes & Troubleshooting
 
-#### 1. SLL certificate creation
+#### SLL certificate creation
 on success it prints out this:
 ```
 IMPORTANT NOTES:
