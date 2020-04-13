@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
     index_html = Rails.root.join 'public/index.html'
     if index_html.exist?
-      render file: index_html
+      render file: index_html, layout: false
     else
       render plain: "no frontend app present\n"
     end
