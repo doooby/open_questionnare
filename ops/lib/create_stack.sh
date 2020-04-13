@@ -68,8 +68,8 @@ do
     echo
 
     cd $stack_path
-    release_hook=$stack_path/release_hook
-    [ -f $release_hook ] && sudo time $release_hook
+    release_hook=$stack_path/.deploy
+    [ -f $release_hook ] && sudo time -p $release_hook
 
 done
 EOF
