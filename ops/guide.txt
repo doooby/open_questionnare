@@ -13,7 +13,7 @@
 * (throw away the original root connection identity)
 
 ### 2. install docker
-This whole operations concept is based on docker & docker-compose. there's few ways to do it, which also depends on the OS you've chosen; probably best approach is to stick with official way as presented in docker's documentation.
+This whole operations concept is based on docker & docker-compose. there's few ways to do it, which also depends on the OS you've chosen; probably the best approach is to stick with official way as presented in docker's documentation.
 https://docs.docker.com/engine/install/
 https://docs.docker.com/compose/install/
 
@@ -64,7 +64,10 @@ Open the stack config file (`$stack_path/stack.conf`) and add such line:
 on server: `sudo bash src/ops/lib/install_https.sh`
 (! This can be run repeatedly, but it will destroy old and create certificate. Also, the nginx service needs to be down, i.e. not running)
 
-#### 7. done - test it
+#### 7. enable git push deploy
+now rename the deploy hook to enable push-to-deploy functionality
+on server: `sudo mv _deploy deploy`
+
 Now it should all be done, so you can manually start up the services:
 on server: `sudo bin/docker_compose up -d`
 

@@ -31,7 +31,7 @@ chown root:"$name" tmp
 chmod 0770 tmp
 
 ln -s src/ops/bin bin
-ln -s bin/deploy_release release_hook
+ln -s bin/deploy_release _deploy
 
 echo "--- seting up git repository"
 # create git repo
@@ -68,7 +68,7 @@ do
     echo
 
     cd $stack_path
-    release_hook=$stack_path/.deploy
+    release_hook=$stack_path/deploy
     [ -f $release_hook ] && sudo time -p $release_hook
 
 done
